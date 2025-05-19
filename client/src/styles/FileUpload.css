@@ -1,0 +1,44 @@
+.file-upload {
+  margin-bottom: 2rem;
+}
+
+.file-upload label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.file-upload input[type="file"] {
+  width: 100%;
+  padding: 1rem;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.file-upload input[type="file"]:hover {
+  border-color: #3498db;
+  background-color: #e8f4fc;
+}
+
+.file-upload .file-list {
+  margin-top: 1rem;
+}
+
+.file-upload .file-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.file-upload .file-icon {
+  margin-right: 0.5rem;
+  color: #3498db;
+}
