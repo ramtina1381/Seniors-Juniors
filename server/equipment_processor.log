@@ -1,0 +1,831 @@
+2025-05-20 17:51:27,020 - INFO - 
+==================================================
+2025-05-20 17:51:27,020 - INFO - Starting equipment processing at 2025-05-20 17:51:27.020758
+2025-05-20 17:51:27,020 - INFO - ==================================================
+
+2025-05-20 17:51:27,021 - INFO - Running with arguments: {'location': '12345', 'output': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output', 'uploads_root': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads'}
+2025-05-20 17:51:27,021 - INFO - Gemini API configured successfully
+2025-05-20 17:51:27,021 - INFO - 
+==============================
+2025-05-20 17:51:27,021 - INFO - Starting image processing
+2025-05-20 17:51:27,021 - INFO - ==============================
+2025-05-20 17:51:27,022 - INFO - Found 1 image files to process
+2025-05-20 17:51:27,022 - INFO - Processing image: WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 17:51:27,022 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 17:51:30,527 - INFO - Successfully extracted data from 3 images
+2025-05-20 17:51:30,527 - INFO - 
+==============================
+2025-05-20 17:51:30,527 - INFO - Starting manufacturer matching
+2025-05-20 17:51:30,528 - INFO - ==============================
+2025-05-20 17:51:30,529 - INFO - Loading manufacturer data from: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/manufacturer/12345/manufacturer_file_12345.xlsx
+2025-05-20 17:51:39,327 - INFO - Successfully loaded manufacturer data with 92177 records
+2025-05-20 17:51:39,464 - ERROR - Error matching row 0: name 'ai_description_matcher' is not defined
+2025-05-20 17:51:39,563 - ERROR - Error matching row 1: name 'ai_description_matcher' is not defined
+2025-05-20 17:51:39,663 - ERROR - Error matching row 2: name 'ai_description_matcher' is not defined
+2025-05-20 17:51:39,667 - ERROR - Failed to save results: Missing required columns in output: ['Asset Tag #', 'Serial Number', 'Item Number', 'Mfr Part number']
+2025-05-20 17:51:39,667 - ERROR - 
+PROCESSING FAILED: Missing required columns in output: ['Asset Tag #', 'Serial Number', 'Item Number', 'Mfr Part number']
+2025-05-20 18:00:01,652 - INFO - 
+==================================================
+2025-05-20 18:00:01,652 - INFO - Starting equipment processing at 2025-05-20 18:00:01.652561
+2025-05-20 18:00:01,652 - INFO - ==================================================
+
+2025-05-20 18:00:01,653 - INFO - Gemini API configured successfully
+2025-05-20 18:00:01,653 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:00:13,982 - ERROR - 
+UNEXPECTED ERROR: "None of [Index(['Item Number', 'Item Description'], dtype='object')] are in the [columns]"
+2025-05-20 18:00:13,987 - ERROR - Traceback (most recent call last):
+  File "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/python/process_equipment.py", line 239, in main
+    ai_match = ai_description_matcher(row['description'], df_manufacturers, model)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/python/process_equipment.py", line 114, in ai_description_matcher
+    {top_candidates_df[['Item Number', 'Item Description']].to_string(index=False)}
+     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/frame.py", line 4108, in __getitem__
+    indexer = self.columns._get_indexer_strict(key, "columns")[1]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6200, in _get_indexer_strict
+    self._raise_if_missing(keyarr, indexer, axis_name)
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 6249, in _raise_if_missing
+    raise KeyError(f"None of [{key}] are in the [{axis_name}]")
+KeyError: "None of [Index(['Item Number', 'Item Description'], dtype='object')] are in the [columns]"
+
+2025-05-20 18:03:20,437 - INFO - 
+==================================================
+2025-05-20 18:03:20,437 - INFO - Starting equipment processing at 2025-05-20 18:03:20.437597
+2025-05-20 18:03:20,437 - INFO - ==================================================
+
+2025-05-20 18:03:20,438 - INFO - Gemini API configured successfully
+2025-05-20 18:03:20,438 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:03:32,036 - ERROR - 
+UNEXPECTED ERROR: 'part_number'
+2025-05-20 18:03:32,041 - ERROR - Traceback (most recent call last):
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'part_number'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/python/process_equipment.py", line 238, in main
+    df_manufacturers['part_number'] = df_manufacturers['part_number'].astype(str).str.strip().str.upper()
+                                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'part_number'
+
+2025-05-20 18:04:42,725 - INFO - 
+==================================================
+2025-05-20 18:04:42,725 - INFO - Starting equipment processing at 2025-05-20 18:04:42.725281
+2025-05-20 18:04:42,725 - INFO - ==================================================
+
+2025-05-20 18:04:42,725 - INFO - Gemini API configured successfully
+2025-05-20 18:04:42,726 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:04:54,569 - ERROR - 
+UNEXPECTED ERROR: 'part_number'
+2025-05-20 18:04:54,575 - ERROR - Traceback (most recent call last):
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'part_number'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/python/process_equipment.py", line 246, in main
+    exact_matches = df_manufacturers[df_manufacturers['part_number'] == row['part_number']]
+                                     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/frame.py", line 4102, in __getitem__
+    indexer = self.columns.get_loc(key)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'part_number'
+
+2025-05-20 18:06:42,822 - INFO - 
+==================================================
+2025-05-20 18:06:42,823 - INFO - Starting equipment processing at 2025-05-20 18:06:42.822882
+2025-05-20 18:06:42,823 - INFO - ==================================================
+
+2025-05-20 18:06:42,823 - INFO - Gemini API configured successfully
+2025-05-20 18:06:42,823 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:07:09,199 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 56
+}
+]
+2025-05-20 18:07:23,328 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 42
+}
+]
+2025-05-20 18:07:37,573 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 28
+}
+]
+2025-05-20 18:07:37,822 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory_12345.csv
+2025-05-20 18:07:37,822 - INFO - 
+=== Processing Summary ===
+2025-05-20 18:07:37,822 - INFO - Images processed: 1
+2025-05-20 18:07:37,822 - INFO - Items extracted: 3
+2025-05-20 18:07:37,822 - INFO - 
+=== Matching Results ===
+2025-05-20 18:07:37,825 - INFO - match_method
+no_match    3
+2025-05-20 18:08:09,061 - INFO - 
+==================================================
+2025-05-20 18:08:09,061 - INFO - Starting equipment processing at 2025-05-20 18:08:09.061844
+2025-05-20 18:08:09,062 - INFO - ==================================================
+
+2025-05-20 18:08:09,062 - INFO - Gemini API configured successfully
+2025-05-20 18:08:09,062 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:08:35,106 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 31
+}
+]
+2025-05-20 18:08:50,675 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]
+2025-05-20 18:09:05,127 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-05-20 18:09:05,371 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory_12345.csv
+2025-05-20 18:09:05,371 - INFO - 
+=== Processing Summary ===
+2025-05-20 18:09:05,371 - INFO - Images processed: 1
+2025-05-20 18:09:05,371 - INFO - Items extracted: 3
+2025-05-20 18:09:05,371 - INFO - 
+=== Matching Results ===
+2025-05-20 18:09:05,376 - INFO - match_method
+no_match    3
+2025-05-20 18:13:23,599 - INFO - 
+==================================================
+2025-05-20 18:13:23,600 - INFO - Starting equipment processing at 2025-05-20 18:13:23.599980
+2025-05-20 18:13:23,600 - INFO - ==================================================
+
+2025-05-20 18:13:23,600 - INFO - Gemini API configured successfully
+2025-05-20 18:13:23,601 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345678/WhatsApp Image 2025-05-15 at 17.41.31 (1).jpeg
+2025-05-20 18:13:35,379 - ERROR - 
+UNEXPECTED ERROR: 'item_number'
+2025-05-20 18:13:35,384 - ERROR - Traceback (most recent call last):
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3805, in get_loc
+    return self._engine.get_loc(casted_key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7081, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 7089, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'item_number'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/python/process_equipment.py", line 248, in main
+    matched['item_number'] = exact_matches.iloc[0]['item_number']
+                             ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/series.py", line 1121, in __getitem__
+    return self._get_value(key)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/series.py", line 1237, in _get_value
+    loc = self.index.get_loc(label)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/miniconda3/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
+    raise KeyError(key) from err
+KeyError: 'item_number'
+
+2025-05-20 18:17:11,868 - INFO - 
+==================================================
+2025-05-20 18:17:11,869 - INFO - Starting equipment processing at 2025-05-20 18:17:11.869013
+2025-05-20 18:17:11,869 - INFO - ==================================================
+
+2025-05-20 18:17:11,869 - INFO - Gemini API configured successfully
+2025-05-20 18:17:11,869 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345678/WhatsApp Image 2025-05-15 at 17.41.31 (1).jpeg
+2025-05-20 18:17:23,023 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory_12345678.csv
+2025-05-20 18:17:23,023 - INFO - 
+=== Processing Summary ===
+2025-05-20 18:17:23,023 - INFO - Images processed: 1
+2025-05-20 18:17:23,023 - INFO - Items extracted: 1
+2025-05-20 18:17:23,023 - INFO - 
+=== Matching Results ===
+2025-05-20 18:17:23,039 - INFO - match_method
+exact_part_number    1
+2025-05-20 18:18:12,960 - INFO - 
+==================================================
+2025-05-20 18:18:12,960 - INFO - Starting equipment processing at 2025-05-20 18:18:12.960362
+2025-05-20 18:18:12,960 - INFO - ==================================================
+
+2025-05-20 18:18:12,960 - INFO - Gemini API configured successfully
+2025-05-20 18:18:12,961 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:18:16,003 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (1).jpeg
+2025-05-20 18:18:43,229 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2025-05-20 18:19:01,080 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2025-05-20 18:19:19,518 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+2025-05-20 18:19:19,772 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory_123456.csv
+2025-05-20 18:19:19,773 - INFO - 
+=== Processing Summary ===
+2025-05-20 18:19:19,773 - INFO - Images processed: 2
+2025-05-20 18:19:19,773 - INFO - Items extracted: 4
+2025-05-20 18:19:19,773 - INFO - 
+=== Matching Results ===
+2025-05-20 18:19:19,776 - INFO - match_method
+no_match             3
+exact_part_number    1
+2025-05-20 18:26:13,639 - INFO - ============================================================
+2025-05-20 18:26:13,640 - INFO - Starting equipment processing at 2025-05-20 18:26:13.640493
+2025-05-20 18:26:13,640 - INFO - ============================================================
+2025-05-20 18:26:13,641 - INFO - Gemini API configured successfully
+2025-05-20 18:26:13,641 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:26:16,559 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (1).jpeg
+2025-05-20 18:26:51,564 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]
+2025-05-20 18:27:15,646 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+2025-05-20 18:27:41,170 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 23
+}
+]
+2025-05-20 18:27:41,419 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-20 18:28:03,606 - INFO - ============================================================
+2025-05-20 18:28:03,606 - INFO - Starting equipment processing at 2025-05-20 18:28:03.606532
+2025-05-20 18:28:03,606 - INFO - ============================================================
+2025-05-20 18:28:03,607 - INFO - Gemini API configured successfully
+2025-05-20 18:28:03,607 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 18:28:07,082 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/123456/WhatsApp Image 2025-05-15 at 17.41.31 (1).jpeg
+2025-05-20 18:28:46,815 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 20
+}
+]
+2025-05-20 18:29:18,796 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+2025-05-20 18:29:54,599 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 11
+}
+]
+2025-05-20 18:29:54,864 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-20 22:11:33,405 - INFO - ============================================================
+2025-05-20 22:11:33,406 - INFO - Starting equipment processing at 2025-05-20 22:11:33.406164
+2025-05-20 22:11:33,406 - INFO - ============================================================
+2025-05-20 22:11:33,406 - INFO - Gemini API configured successfully
+2025-05-20 22:11:33,407 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 22:12:03,678 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-05-20 22:12:18,679 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+2025-05-20 22:12:33,169 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 31
+}
+]
+2025-05-20 22:12:33,417 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-20 22:29:21,430 - INFO - 
+==================================================
+2025-05-20 22:29:21,431 - INFO - Starting equipment processing at 2025-05-20 22:29:21.431250
+2025-05-20 22:29:21,431 - INFO - ==================================================
+
+2025-05-20 22:29:21,431 - INFO - Gemini API configured successfully
+2025-05-20 22:29:21,432 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 22:29:49,251 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 18
+}
+]
+2025-05-20 22:30:06,082 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+2025-05-20 22:30:31,067 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 36
+}
+]
+2025-05-20 22:30:31,308 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory_12345.csv
+2025-05-20 22:30:31,308 - INFO - 
+=== Processing Summary ===
+2025-05-20 22:30:31,308 - INFO - Images processed: 1
+2025-05-20 22:30:31,309 - INFO - Items extracted: 3
+2025-05-20 22:30:31,309 - INFO - 
+=== Matching Results ===
+2025-05-20 22:30:31,312 - INFO - match_method
+no_match    3
+2025-05-20 22:35:17,592 - INFO - ============================================================
+2025-05-20 22:35:17,592 - INFO - Starting equipment processing at 2025-05-20 22:35:17.592357
+2025-05-20 22:35:17,592 - INFO - ============================================================
+2025-05-20 22:35:17,592 - INFO - Gemini API configured successfully
+2025-05-20 22:35:17,593 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 22:35:52,269 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 15
+}
+]
+2025-05-20 22:36:08,051 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2025-05-20 22:36:36,639 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 29
+}
+]
+2025-05-20 22:36:36,901 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-20 22:39:59,848 - INFO - ============================================================
+2025-05-20 22:39:59,848 - INFO - Starting equipment processing at 2025-05-20 22:39:59.848709
+2025-05-20 22:39:59,848 - INFO - ============================================================
+2025-05-20 22:39:59,849 - INFO - Gemini API configured successfully
+2025-05-20 22:39:59,849 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-20 22:40:40,830 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2025-05-20 22:41:03,828 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2025-05-20 22:41:28,594 - ERROR - AI matching error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 250000
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 36
+}
+]
+2025-05-20 22:41:28,853 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
