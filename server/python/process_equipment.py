@@ -7,10 +7,14 @@ import sys
 import traceback
 from glob import glob
 from PIL import Image, UnidentifiedImageError
-import google.generativeai as genai
 from difflib import get_close_matches
 import logging
 from datetime import datetime
+import openai
+from openai import OpenAI
+from dotenv import load_dotenv
+load_dotenv()  # This loads the .env file
+import base64
 
 # Configure logging
 logging.basicConfig(
@@ -27,26 +31,31 @@ class EquipmentProcessorError(Exception):
     """Custom exception for equipment processing errors"""
     pass
 
-def configure_gemini():
-    """Configure Gemini API with error handling"""
+def configure_openai():
+    """Configure OpenAI API with error handling"""
     try:
-        api_key = "AIzaSyAKxLq89_wqrA8eZI9mebnDJKioBe52XaM"
+        api_key = os.getenv("OPENAI_API_KEY")
         if not api_key:
-            raise EquipmentProcessorError("Missing Gemini API key")
+            raise EquipmentProcessorError("Missing OpenAI API key")
         
-        genai.configure(api_key=api_key)
-        logger.info("Gemini API configured successfully")
-        return genai.GenerativeModel("gemini-1.5-flash")
+        client = OpenAI(api_key=api_key)
+        logger.info("OpenAI API configured successfully")
+        return client
     except Exception as e:
-        raise EquipmentProcessorError(f"Gemini configuration failed: {str(e)}")
+        raise EquipmentProcessorError(f"OpenAI configuration failed: {str(e)}")
 
-def extract_from_image(image_path, model):
-    """Extract equipment data from image using Gemini"""
+def extract_from_image(image_path, client):
+    """Enhanced extraction to capture all relevant text"""
     try:
         logger.info(f"Processing image: {image_path}")
         
         try:
             image = Image.open(image_path)
+            # Convert image to bytes for API upload
+            from io import BytesIO
+            byte_stream = BytesIO()
+            image.save(byte_stream, format='PNG')
+            byte_data = byte_stream.getvalue()
         except (IOError, UnidentifiedImageError) as e:
             logger.error(f"Invalid image file: {image_path} - {str(e)}")
             return None
@@ -65,11 +74,14 @@ def extract_from_image(image_path, model):
         prompt = f"""
 You are a data extraction expert. Extract **all radios and antennas in photo** from the image and classify the following text into structured JSON with the keys:
 
-- serial_number
-- part_number
-- asset_tag
-- description
-
+- serial_number (Unique identifier)
+- part_number (Similar equipment would have similar part numbers)
+- asset_tag (must start with ATT)
+      - description: Brief equipment description including:
+       - Type (radio, antenna, router, etc.)
+       - Key specifications
+       - Notable physical features
+       
 If there are multiple items, return a list of JSON objects. If a field is not present, return null.
 
 {example_text}
@@ -77,18 +89,32 @@ If there are multiple items, return a list of JSON objects. If a field is not pr
 Text:
 Now extract from this image:
         """
+        encoded_image = base64.b64encode(byte_data).decode("utf-8")
+
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{encoded_image}"}},
+                    ],
+                }
+            ],
+            max_tokens=1000,
+        )
         
-        response = model.generate_content([prompt, image])
-        if not response.text:
-            logger.warning(f"No content returned from Gemini for image: {image_path}")
+        if not response.choices or not response.choices[0].message.content:
+            logger.warning(f"No content returned from OpenAI for image: {image_path}")
             return None
-        return response.text
+        return response.choices[0].message.content
     except Exception as e:
-        logger.error(f"Gemini processing failed for {image_path}: {str(e)}")
+        logger.error(f"OpenAI processing failed for {image_path}: {str(e)}")
         return None
 
 def clean_json_response(response_text):
-    """Clean Gemini response JSON"""
+    """Clean OpenAI response JSON"""
     try:
         cleaned = re.sub(r'^```json|```$', '', response_text, flags=re.MULTILINE).strip()
         return cleaned
@@ -96,9 +122,27 @@ def clean_json_response(response_text):
         logger.error(f"Error cleaning JSON response: {str(e)}")
         return None
 
-def ai_description_matcher(extracted_desc, df_manufacturers, model):
-    """Use Gemini AI to match an item description to manufacturer data"""
+def ai_description_matcher(extracted_desc, df_manufacturers, client):
+    """You are a technical equipment expert. Your task is to identify the best matching item number from a manufacturer file based on the extracted description.
+
+            The match should prioritize:
+            - Similar part or model numbers or item description
+            - Functional and keyword similarity (e.g., radio, antenna, rectifier)
+            - Ignoring irrelevant differences"""
     try:
+        # First try exact matches in the description
+        for _, row in df_manufacturers.iterrows():
+            if pd.notna(row['Item Description']) and str(row['Item Description']).lower() in extracted_desc.lower():
+                return row['Item Number']
+        
+        # Then try partial matches
+        for _, row in df_manufacturers.iterrows():
+            if pd.notna(row['Item Description']):
+                desc_words = str(row['Item Description']).lower().split()
+                if any(word in extracted_desc.lower() for word in desc_words if len(word) > 3):
+                    return row['Item Number']
+        
+        # Only use API if no matches found
         prompt = f"""
 EXTRACTED DESCRIPTION:
 {extracted_desc}
@@ -106,14 +150,24 @@ EXTRACTED DESCRIPTION:
 CANDIDATE ITEMS (Item Number | Item Description):
 {df_manufacturers[['Item Number', 'Item Description']].to_string(index=False)}
 
-Return the best matching Item Number based on:
-- Technical and functional similarity
-- Manufacturer or model relevance
-
-Respond ONLY with the Item Number. If no match: "NO_MATCH"
+    Return ONLY the best matching Item Number considering:
+    1. Manufacturer Item Description with item description
+    2. Functional equivalence
+    3. Manufacturer/model compatibility
         """
-        response = model.generate_content(prompt)
-        return response.text.strip().strip('"')
+        
+        response = client.chat.completions.create(
+            model="gpt-4.1-mini",  # Use cheaper model for this task
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant that matches technical equipment descriptions."},
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=100,
+            temperature=0.1  # More deterministic output
+        )
+        
+        result = response.choices[0].message.content.strip().strip('"')
+        return result if result in df_manufacturers['Item Number'].values else None
     except Exception as e:
         logger.error(f"AI matching error: {str(e)}")
         return None
@@ -134,14 +188,17 @@ def load_manufacturer_data(file_path):
         raise EquipmentProcessorError(f"Error loading manufacturer data: {str(e)}")
 
 def save_results(df, output_path):
-    """Save final output CSV"""
+    """Save final output CSV with proper path handling"""
     try:
-        required_columns = ['Asset Tag #', 'Serial Number', 'Item Number', 'Mfr Part number']
-        missing_cols = [col for col in required_columns if col not in df.columns]
-        if missing_cols:
-            raise EquipmentProcessorError(f"Missing required columns: {missing_cols}")
-
-        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # Create directory if it doesn't exist
+        output_dir = os.path.dirname(output_path)
+        if output_dir:  # Only create if path has a directory
+            os.makedirs(output_dir, exist_ok=True)
+        
+        # Ensure the path ends with .csv
+        if not output_path.lower().endswith('.csv'):
+            output_path = os.path.join(output_dir, 'output', 'equipment_inventory.csv')
+        
         df.to_csv(output_path, index=False)
         logger.info(f"Results saved to: {output_path}")
     except Exception as e:
@@ -159,7 +216,7 @@ def main():
         parser.add_argument('--uploads_root', required=True)
         args = parser.parse_args()
 
-        model = configure_gemini()
+        client = configure_openai()
 
         photo_dir = os.path.join(args.uploads_root, 'photos', args.location)
         image_files = glob(os.path.join(photo_dir, '*.jpg')) + \
@@ -171,7 +228,7 @@ def main():
 
         results = []
         for image_file in image_files:
-            response = extract_from_image(image_file, model)
+            response = extract_from_image(image_file, client)
             if response:
                 cleaned = clean_json_response(response)
                 if cleaned:
@@ -215,14 +272,23 @@ def main():
                 matched_data.append(matched)
                 continue
 
-            # Stage 2: AI description match
+            # Stage 2: Try to find in description without API call
             if pd.notna(row.get('description')):
-                ai_match = ai_description_matcher(row['description'], df_manufacturers, model)
-                if ai_match and ai_match in df_manufacturers['Item Number'].values:
-                    matched['item_number'] = ai_match
-                    matched['match_method'] = 'ai_description_match'
-                    matched_data.append(matched)
-                    continue
+                # First try exact matches in manufacturer descriptions
+                for _, mfr_row in df_manufacturers.iterrows():
+                    if pd.notna(mfr_row['Item Description']) and str(mfr_row['Item Description']).lower() in row['description'].lower():
+                        matched['item_number'] = mfr_row['Item Number']
+                        matched['match_method'] = 'exact_description_match'
+                        matched_data.append(matched)
+                        break
+                else:
+                    # Only use API if no matches found
+                    ai_match = ai_description_matcher(row['description'], df_manufacturers, client)
+                    if ai_match and ai_match in df_manufacturers['Item Number'].values:
+                        matched['item_number'] = ai_match
+                        matched['match_method'] = 'ai_description_match'
+                        matched_data.append(matched)
+                        continue
 
             # Stage 3: Fuzzy match on part number
             close_matches = get_close_matches(
@@ -251,11 +317,21 @@ def main():
             'serial_number': 'Serial Number',
             'item_number': 'Item Number',
             'part_number': 'Mfr Part number',
-            'From location': 'From location'
+            'From location': 'From location',
+            'quantity': 'Quantity',
+            'quality': 'Quality',
+            'werf': 'WERF#',
+            'wrt': 'WRT#',
+            'toe_tag': 'Toe Tag #'
         }
 
         df_output = df_final[[k for k in output_columns if k in df_final.columns]]
         df_output = df_output.rename(columns=output_columns)
+        df_output['Quantity'] = 1
+        df_output['Quality'] = 'Good'
+        df_output['WERF#'] = ' '
+        df_output['WRT#'] = ' '
+        df_output['Toe Tag #'] = ' '
         save_results(df_output, args.output)
 
     except EquipmentProcessorError as e:

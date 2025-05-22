@@ -829,3 +829,156 @@ no_match    3
 }
 ]
 2025-05-20 22:41:28,853 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-21 20:15:12,075 - INFO - ============================================================
+2025-05-21 20:15:12,076 - INFO - Starting equipment processing at 2025-05-21 20:15:12.076095
+2025-05-21 20:15:12,076 - INFO - ============================================================
+2025-05-21 20:15:12,077 - ERROR - Equipment Processor Error: OpenAI configuration failed: Missing OpenAI API key
+2025-05-21 20:20:22,214 - INFO - ============================================================
+2025-05-21 20:20:22,215 - INFO - Starting equipment processing at 2025-05-21 20:20:22.215292
+2025-05-21 20:20:22,215 - INFO - ============================================================
+2025-05-21 20:20:22,297 - INFO - OpenAI API configured successfully
+2025-05-21 20:20:22,297 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 20:20:28,893 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-21 20:20:28,896 - INFO - Retrying request to /chat/completions in 0.385260 seconds
+2025-05-21 20:20:32,966 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-21 20:20:32,967 - INFO - Retrying request to /chat/completions in 0.809612 seconds
+2025-05-21 20:20:37,313 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-05-21 20:20:37,319 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-05-21 20:20:37,320 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:28:05,772 - INFO - ============================================================
+2025-05-21 20:28:05,773 - INFO - Starting equipment processing at 2025-05-21 20:28:05.773092
+2025-05-21 20:28:05,773 - INFO - ============================================================
+2025-05-21 20:28:05,831 - INFO - OpenAI API configured successfully
+2025-05-21 20:28:05,832 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 20:28:11,326 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-21 20:28:11,331 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/12345/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg: Error code: 400 - {'error': {'message': "You uploaded an unsupported image. Please make sure your image has of one the following formats: ['png', 'jpeg', 'gif', 'webp'].", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_image_format'}}
+2025-05-21 20:28:11,332 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:32:16,671 - INFO - ============================================================
+2025-05-21 20:32:16,672 - INFO - Starting equipment processing at 2025-05-21 20:32:16.671940
+2025-05-21 20:32:16,672 - INFO - ============================================================
+2025-05-21 20:32:16,731 - INFO - OpenAI API configured successfully
+2025-05-21 20:32:16,732 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 20:32:26,167 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-21 20:32:26,173 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 400 - {'error': {'message': "You uploaded an unsupported image. Please make sure your image has of one the following formats: ['png', 'jpeg', 'gif', 'webp'].", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_image_format'}}
+2025-05-21 20:32:26,173 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:35:47,775 - INFO - ============================================================
+2025-05-21 20:35:47,775 - INFO - Starting equipment processing at 2025-05-21 20:35:47.775561
+2025-05-21 20:35:47,775 - INFO - ============================================================
+2025-05-21 20:35:47,839 - INFO - OpenAI API configured successfully
+2025-05-21 20:35:47,839 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 20:35:54,568 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-21 20:35:54,575 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 404 - {'error': {'message': 'Your organization must be verified to use the model `o4-mini`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-21 20:35:54,576 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:40:48,106 - INFO - ============================================================
+2025-05-21 20:40:48,107 - INFO - Starting equipment processing at 2025-05-21 20:40:48.107254
+2025-05-21 20:40:48,107 - INFO - ============================================================
+2025-05-21 20:40:48,167 - INFO - OpenAI API configured successfully
+2025-05-21 20:40:48,168 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 20:40:54,261 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-21 20:40:54,266 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 404 - {'error': {'message': 'Your organization must be verified to use the model `o4-mini`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-21 20:40:54,267 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:49:07,630 - INFO - ============================================================
+2025-05-21 20:49:07,630 - INFO - Starting equipment processing at 2025-05-21 20:49:07.630667
+2025-05-21 20:49:07,630 - INFO - ============================================================
+2025-05-21 20:49:07,694 - INFO - OpenAI API configured successfully
+2025-05-21 20:49:07,694 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 20:49:14,424 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-21 20:49:14,430 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 404 - {'error': {'message': 'Your organization must be verified to use the model `o4-mini`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-21 20:49:14,430 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 20:54:04,314 - INFO - ============================================================
+2025-05-21 20:54:04,315 - INFO - Starting equipment processing at 2025-05-21 20:54:04.315054
+2025-05-21 20:54:04,315 - INFO - ============================================================
+2025-05-21 20:54:04,348 - INFO - OpenAI API configured successfully
+2025-05-21 20:54:04,348 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 20:54:06,608 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-21 20:54:06,619 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 404 - {'error': {'message': 'Your organization must be verified to use the model `o4-mini`. Please go to: https://platform.openai.com/settings/organization/general and click on Verify Organization. If you just verified, it can take up to 15 minutes for access to propagate.', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-21 20:54:06,620 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 21:06:05,558 - INFO - ============================================================
+2025-05-21 21:06:05,559 - INFO - Starting equipment processing at 2025-05-21 21:06:05.559479
+2025-05-21 21:06:05,559 - INFO - ============================================================
+2025-05-21 21:06:05,615 - INFO - OpenAI API configured successfully
+2025-05-21 21:06:05,616 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 21:06:08,750 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-21 21:06:08,753 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg: Error code: 400 - {'error': {'message': 'Invalid content type. image_url is only supported by certain models.', 'type': 'invalid_request_error', 'param': 'messages.[0].content.[1].type', 'code': None}}
+2025-05-21 21:06:08,753 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 21:08:25,717 - INFO - ============================================================
+2025-05-21 21:08:25,718 - INFO - Starting equipment processing at 2025-05-21 21:08:25.718072
+2025-05-21 21:08:25,718 - INFO - ============================================================
+2025-05-21 21:08:25,778 - INFO - OpenAI API configured successfully
+2025-05-21 21:08:25,778 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 21:08:35,810 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:08:44,988 - ERROR - Equipment Processor Error: Failed to save results: [Errno 21] Is a directory: '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output'
+2025-05-21 21:12:14,054 - INFO - ============================================================
+2025-05-21 21:12:14,055 - INFO - Starting equipment processing at 2025-05-21 21:12:14.054951
+2025-05-21 21:12:14,055 - INFO - ============================================================
+2025-05-21 21:12:14,118 - INFO - OpenAI API configured successfully
+2025-05-21 21:12:14,119 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 21:12:24,865 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:12:33,575 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/equipment_inventory.csv
+2025-05-21 21:28:33,278 - INFO - ============================================================
+2025-05-21 21:28:33,279 - INFO - Starting equipment processing at 2025-05-21 21:28:33.279252
+2025-05-21 21:28:33,279 - INFO - ============================================================
+2025-05-21 21:28:33,348 - INFO - OpenAI API configured successfully
+2025-05-21 21:28:33,348 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 21:28:43,732 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:28:52,549 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 21:29:38,893 - INFO - ============================================================
+2025-05-21 21:29:38,893 - INFO - Starting equipment processing at 2025-05-21 21:29:38.893405
+2025-05-21 21:29:38,893 - INFO - ============================================================
+2025-05-21 21:29:38,924 - INFO - OpenAI API configured successfully
+2025-05-21 21:29:38,924 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/1234789/antenna1.jpeg
+2025-05-21 21:29:49,167 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:29:58,052 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 21:30:59,137 - INFO - ============================================================
+2025-05-21 21:30:59,138 - INFO - Starting equipment processing at 2025-05-21 21:30:59.138333
+2025-05-21 21:30:59,138 - INFO - ============================================================
+2025-05-21 21:30:59,163 - INFO - OpenAI API configured successfully
+2025-05-21 21:30:59,164 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 21:31:13,651 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:31:39,034 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 21:44:19,281 - INFO - ============================================================
+2025-05-21 21:44:19,281 - INFO - Starting equipment processing at 2025-05-21 21:44:19.281803
+2025-05-21 21:44:19,281 - INFO - ============================================================
+2025-05-21 21:44:19,389 - INFO - OpenAI API configured successfully
+2025-05-21 21:44:19,389 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 21:44:32,508 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:44:58,031 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 21:58:28,137 - INFO - ============================================================
+2025-05-21 21:58:28,138 - INFO - Starting equipment processing at 2025-05-21 21:58:28.138137
+2025-05-21 21:58:28,138 - INFO - ============================================================
+2025-05-21 21:58:28,196 - INFO - OpenAI API configured successfully
+2025-05-21 21:58:28,197 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 21:58:39,901 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 21:59:05,170 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 22:39:50,791 - INFO - ============================================================
+2025-05-21 22:39:50,792 - INFO - Starting equipment processing at 2025-05-21 22:39:50.791938
+2025-05-21 22:39:50,792 - INFO - ============================================================
+2025-05-21 22:39:50,848 - INFO - OpenAI API configured successfully
+2025-05-21 22:39:50,849 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 22:40:04,101 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 22:40:04,125 - ERROR - JSON decode error in /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg: Extra data: line 4 column 1 (char 5)
+2025-05-21 22:40:04,125 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-21 22:45:40,346 - INFO - ============================================================
+2025-05-21 22:45:40,347 - INFO - Starting equipment processing at 2025-05-21 22:45:40.347349
+2025-05-21 22:45:40,347 - INFO - ============================================================
+2025-05-21 22:45:40,403 - INFO - OpenAI API configured successfully
+2025-05-21 22:45:40,404 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232/WhatsApp Image 2025-05-15 at 17.41.31 (3).jpeg
+2025-05-21 22:45:54,111 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 22:46:19,614 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-21 22:59:39,812 - INFO - ============================================================
+2025-05-21 22:59:39,813 - INFO - Starting equipment processing at 2025-05-21 22:59:39.812935
+2025-05-21 22:59:39,813 - INFO - ============================================================
+2025-05-21 22:59:39,875 - INFO - OpenAI API configured successfully
+2025-05-21 22:59:39,876 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0049.jpg
+2025-05-21 22:59:47,154 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 22:59:47,174 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0048.jpg
+2025-05-21 22:59:57,694 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 22:59:57,701 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0051.jpg
+2025-05-21 23:00:06,295 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:00:06,299 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0050.jpg
+2025-05-21 23:00:14,449 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:00:14,454 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0052.jpg
+2025-05-21 23:00:19,402 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:00:19,406 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0053.jpg
+2025-05-21 23:00:27,800 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-21 23:00:58,431 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
