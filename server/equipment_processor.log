@@ -982,3 +982,197 @@ no_match    3
 2025-05-21 23:00:19,406 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0053.jpg
 2025-05-21 23:00:27,800 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-21 23:00:58,431 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-22 16:31:38,655 - INFO - ============================================================
+2025-05-22 16:31:38,656 - INFO - Starting equipment processing at 2025-05-22 16:31:38.656293
+2025-05-22 16:31:38,656 - INFO - ============================================================
+2025-05-22 16:31:38,716 - INFO - OpenAI API configured successfully
+2025-05-22 16:31:38,716 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0049.jpg
+2025-05-22 16:31:45,791 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:31:45,809 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0048.jpg
+2025-05-22 16:31:56,067 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:31:56,071 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0051.jpg
+2025-05-22 16:32:06,465 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:32:06,478 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0050.jpg
+2025-05-22 16:32:15,632 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:32:15,638 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0052.jpg
+2025-05-22 16:32:22,289 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:32:22,294 - ERROR - JSON decode error in /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0052.jpg: Extra data: line 3 column 1 (char 4)
+2025-05-22 16:32:22,294 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/132232123123/IMG-20241217-WA0053.jpg
+2025-05-22 16:32:30,074 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:32:55,312 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-22 16:36:15,020 - INFO - ============================================================
+2025-05-22 16:36:15,021 - INFO - Starting equipment processing at 2025-05-22 16:36:15.021730
+2025-05-22 16:36:15,022 - INFO - ============================================================
+2025-05-22 16:36:15,086 - INFO - OpenAI API configured successfully
+2025-05-22 16:36:15,086 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg
+2025-05-22 16:36:49,882 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:36:49,907 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg
+2025-05-22 16:37:21,301 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:37:21,309 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg
+2025-05-22 16:37:50,688 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:38:05,398 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-22 16:47:21,224 - INFO - ============================================================
+2025-05-22 16:47:21,226 - INFO - Starting equipment processing at 2025-05-22 16:47:21.226002
+2025-05-22 16:47:21,226 - INFO - ============================================================
+2025-05-22 16:47:21,288 - INFO - OpenAI API configured successfully
+2025-05-22 16:47:21,288 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg
+2025-05-22 16:48:20,470 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:48:20,482 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-05-22 16:48:20,483 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg
+2025-05-22 16:48:48,518 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:48:48,529 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-05-22 16:48:48,530 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg
+2025-05-22 16:49:12,369 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:49:12,372 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg: Error code: 400 - {'error': {'message': "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.", 'type': 'invalid_request_error', 'param': 'max_tokens', 'code': 'unsupported_parameter'}}
+2025-05-22 16:49:12,373 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-22 16:51:42,310 - INFO - ============================================================
+2025-05-22 16:51:42,311 - INFO - Starting equipment processing at 2025-05-22 16:51:42.311398
+2025-05-22 16:51:42,311 - INFO - ============================================================
+2025-05-22 16:51:42,367 - INFO - OpenAI API configured successfully
+2025-05-22 16:51:42,368 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg
+2025-05-22 16:52:18,958 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:52:18,975 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0.1 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+2025-05-22 16:52:18,976 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg
+2025-05-22 16:52:50,789 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:52:50,796 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0.1 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+2025-05-22 16:52:50,796 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg
+2025-05-22 16:53:14,551 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-05-22 16:53:14,557 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg: Error code: 400 - {'error': {'message': "Unsupported value: 'temperature' does not support 0.1 with this model. Only the default (1) value is supported.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_value'}}
+2025-05-22 16:53:14,558 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-22 16:53:52,421 - INFO - ============================================================
+2025-05-22 16:53:52,421 - INFO - Starting equipment processing at 2025-05-22 16:53:52.421429
+2025-05-22 16:53:52,421 - INFO - ============================================================
+2025-05-22 16:53:52,495 - INFO - OpenAI API configured successfully
+2025-05-22 16:53:52,495 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0144.jpg
+2025-05-22 16:54:38,464 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:54:38,500 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0145.jpg
+2025-05-22 16:55:19,999 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:55:20,012 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/777/IMG-20250328-WA0146.jpg
+2025-05-22 16:55:57,232 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:56:06,225 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-22 16:58:08,754 - INFO - ============================================================
+2025-05-22 16:58:08,755 - INFO - Starting equipment processing at 2025-05-22 16:58:08.755598
+2025-05-22 16:58:08,755 - INFO - ============================================================
+2025-05-22 16:58:08,793 - INFO - OpenAI API configured successfully
+2025-05-22 16:58:08,793 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg
+2025-05-22 16:58:19,282 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:58:19,303 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-22 16:58:34,226 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:58:34,235 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg
+2025-05-22 16:58:50,064 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:58:50,069 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg
+2025-05-22 16:59:01,979 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:59:01,992 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg
+2025-05-22 16:59:09,471 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:59:09,475 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-22 16:59:26,553 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-22 16:59:26,559 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-22 16:59:51,451 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-23 10:09:39,580 - INFO - ============================================================
+2025-05-23 10:09:39,580 - INFO - Starting equipment processing at 2025-05-23 10:09:39.580675
+2025-05-23 10:09:39,580 - INFO - ============================================================
+2025-05-23 10:09:39,638 - INFO - OpenAI API configured successfully
+2025-05-23 10:09:39,639 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg
+2025-05-23 10:09:40,109 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:40,109 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 10:09:40,823 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:40,823 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg
+2025-05-23 10:09:41,400 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:41,400 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg
+2025-05-23 10:09:41,942 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:41,942 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg
+2025-05-23 10:09:42,361 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:42,362 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 10:09:42,852 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg: Invalid format specifier ' "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+' for object of type 'str'
+2025-05-23 10:09:42,852 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-23 10:22:42,816 - INFO - ============================================================
+2025-05-23 10:22:42,817 - INFO - Starting equipment processing at 2025-05-23 10:22:42.817436
+2025-05-23 10:22:42,817 - INFO - ============================================================
+2025-05-23 10:22:42,877 - INFO - OpenAI API configured successfully
+2025-05-23 10:22:42,878 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg
+2025-05-23 10:23:00,097 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:23:00,115 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 10:23:21,806 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:23:21,818 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 10:23:21,819 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg
+2025-05-23 10:23:37,758 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:23:37,775 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg
+2025-05-23 10:23:58,806 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:23:58,822 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg
+2025-05-23 10:24:07,298 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:24:07,304 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 10:24:29,547 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 10:24:29,557 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 10:24:50,312 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-05-23 10:34:28,269 - INFO - ============================================================
+2025-05-23 10:34:28,270 - INFO - Starting equipment processing at 2025-05-23 10:34:28.270363
+2025-05-23 10:34:28,270 - INFO - ============================================================
+2025-05-23 10:34:28,328 - INFO - OpenAI API configured successfully
+2025-05-23 10:34:28,329 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg
+2025-05-23 10:34:31,793 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:31,800 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:31,801 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 10:34:36,516 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:36,522 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:36,522 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg
+2025-05-23 10:34:40,442 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:40,445 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:40,445 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg
+2025-05-23 10:34:44,241 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:44,243 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:44,244 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg
+2025-05-23 10:34:46,649 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:46,651 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:46,652 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 10:34:49,848 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-05-23 10:34:49,850 - ERROR - OpenAI processing failed for /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg: Error code: 404 - {'error': {'message': 'The model `gpt-4-vision-preview` has been deprecated, learn more here: https://platform.openai.com/docs/deprecations', 'type': 'invalid_request_error', 'param': None, 'code': 'model_not_found'}}
+2025-05-23 10:34:49,850 - ERROR - Equipment Processor Error: No valid data extracted from images
+2025-05-23 11:00:08,636 - INFO - ============================================================
+2025-05-23 11:00:08,637 - INFO - Starting equipment processing at 2025-05-23 11:00:08.637353
+2025-05-23 11:00:08,637 - INFO - ============================================================
+2025-05-23 11:00:08,696 - INFO - OpenAI API configured successfully
+2025-05-23 11:00:08,696 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0049.jpg
+2025-05-23 11:00:23,125 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:00:23,152 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 11:00:57,341 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:00:57,358 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0048.jpg
+2025-05-23 11:00:57,359 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0051.jpg
+2025-05-23 11:01:16,537 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:01:16,549 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0050.jpg
+2025-05-23 11:01:35,754 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:01:35,760 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0052.jpg
+2025-05-23 11:01:46,025 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:01:46,029 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 11:02:16,847 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-05-23 11:02:16,854 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
+2025-05-23 11:02:36,642 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv

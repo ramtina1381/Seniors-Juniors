@@ -45,7 +45,7 @@ def configure_openai():
         raise EquipmentProcessorError(f"OpenAI configuration failed: {str(e)}")
 
 def extract_from_image(image_path, client):
-    """Enhanced extraction to capture all relevant text"""
+    """You are a data and text extraction expert"""
     try:
         logger.info(f"Processing image: {image_path}")
         
@@ -59,40 +59,56 @@ def extract_from_image(image_path, client):
         except (IOError, UnidentifiedImageError) as e:
             logger.error(f"Invalid image file: {image_path} - {str(e)}")
             return None
-
-        example_text = """
-        Input: PBP4ACPFAA, LBGEPE16KZ05005702, ATT07025435, RECTIFIER NE050AC48ATEZ
-
-        output: {
-            "serial_number": "LBGEPE16KZ05005702",
-            "part_number": "PBP4ACPFAA",
-            "asset_tag": "ATT07025435",
-            "description": "Radio Rectifier NE050AC48ATEZ AX/48V 501"
-        }
-        """
         
         prompt = f"""
-You are a data extraction expert. Extract **all radios and antennas in photo** from the image and classify the following text into structured JSON with the keys:
+You are an expert in structured data extraction from technical images. Extract relevant text from the image and return a structured JSON object using the following keys:
 
-- serial_number (Unique identifier)
-- part_number (Similar equipment would have similar part numbers)
-- asset_tag (must start with ATT)
-      - description: Brief equipment description including:
-       - Type (radio, antenna, router, etc.)
-       - Key specifications
-       - Notable physical features
-       
-If there are multiple items, return a list of JSON objects. If a field is not present, return null.
+### Task
+First, review the **clear examples** provided to learn the formatting, character shapes, and data layout patterns. Then, use that understanding to extract structured data from the less-clear target image.
+After learning from clear images, you can iterate through the unclear ones with better accuracy.
 
-{example_text}
+- **serial_number**: A unique identifier often prefixed with (S), may appear near a barcode.
+- **part_number**: Identifies a specific item. Items of the same model share the same part number. Often prefixed with (1P).
+- **asset_tag**: Always starts with 'ATT'.
+- **description**: A concise description of the item, including:
+  - Type (e.g., antenna, radio, rectifier, router, etc.)
+  - Key specifications (if available)
+  - Physical or notable features
+  - Optionally enhanced using web knowledge or inference from the part number
 
-Text:
-Now extract from this image:
+Return a **list of JSON objects** if multiple items are present. Use `null` for missing fields.
+
+Handle skewed, rotated, or blurry images by attempting to extract text from all regions and angles in the image. learn the shape of numbers
+and letters from clear images and iterate over the non-clear images to have the strongest guess. 
+
+### Examples
+
+Input: PBP4ACPFAA, LBGEPE16KZ05005702, ATT07025435, RECTIFIER NE050AC48ATEZ  
+Output:
+```json
+{{
+  "serial_number": "LBGEPE16KZ05005702",
+  "part_number": "PBP4ACPFAA",
+  "asset_tag": "ATT07025435",
+  "description": "Radio Rectifier NE050AC48ATEZ AX/48V 501"
+}} ```
+
+### Example 2
+Input: X,mm,1°,93,2°,132,4°,209,5°,248,6°,287,8°,365,10°,442,Antenna,(1P)KRE 101 2283/1,(S)T0M1049689,(1P) CS7278761.01,(S) SYZ191049689, 8-port Antena 2LB 24 65
+output:
+```
+{{
+    "serial_number" : "T0M1049689",
+    "part_number" : "KRE1012283/1",
+    "asset_Tag" : " ",
+    "description" : Antenna 8 port 65 degree
+    
+}} ```
         """
         encoded_image = base64.b64encode(byte_data).decode("utf-8")
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="o4-mini",
             messages=[
                 {
                     "role": "user",
@@ -102,8 +118,8 @@ Now extract from this image:
                     ],
                 }
             ],
-            max_tokens=1000,
-        )
+            max_completion_tokens=1000
+            )
         
         if not response.choices or not response.choices[0].message.content:
             logger.warning(f"No content returned from OpenAI for image: {image_path}")
@@ -157,13 +173,12 @@ CANDIDATE ITEMS (Item Number | Item Description):
         """
         
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",  # Use cheaper model for this task
+            model="o4-mini",  # Use cheaper model for this task
             messages=[
                 {"role": "system", "content": "You are a helpful assistant that matches technical equipment descriptions."},
                 {"role": "user", "content": prompt}
             ],
-            max_tokens=100,
-            temperature=0.1  # More deterministic output
+            max_completion_tokens=100
         )
         
         result = response.choices[0].message.content.strip().strip('"')

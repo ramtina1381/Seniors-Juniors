@@ -20,6 +20,10 @@ app.use(express.json());
 // Routes
 app.use('/api/upload', require('./routes/upload'));
 app.use('/api/process', require('./routes/process'));
+app.use('/api/jhaprocess', require('./routes/jhaprocess'));
+app.use('/api/upload/jha', require('./routes/jhaupload'));
+
+
 
 app.get('/', (req, res) => {
   res.status(200).json({ status: 'Backend is running' });
