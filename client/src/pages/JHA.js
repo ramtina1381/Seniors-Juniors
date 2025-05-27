@@ -18,36 +18,51 @@ const JHA = () => {
     alert('JHA PDF and Manufacturer Excel file uploaded successfully!');
   };
 
-  const handleProcess = async () => {
-    if (!location) {
-      alert('Please enter a location before processing.');
-      return;
+ const handleProcess = async () => {
+  if (!location) {
+    alert('Please enter a location before processing.');
+    return;
+  }
+
+  setIsProcessing(true);
+  setProcessMessage('');
+
+  try {
+    const response = await fetch(`http://localhost:5002/api/jhaprocess/${location}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ location }),
+    });
+
+    if (!response.ok) {
+      throw new Error('Server returned an error while processing.');
     }
 
-    setIsProcessing(true);
-    setProcessMessage('');
+    // Handle binary response instead of JSON
+    const blob = await response.blob();
+    const downloadUrl = window.URL.createObjectURL(blob);
+    
+    // Create temporary anchor element to trigger download
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.download = `jha_processed_${location}.xlsb`;  // Custom filename
+    document.body.appendChild(a);
+    a.click();
+    
+    // Clean up
+    window.URL.revokeObjectURL(downloadUrl);
+    document.body.removeChild(a);
 
-    try {
-      const response = await fetch(`http://localhost:5002/api/jhaprocess/${location}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ location }),
-      });
+    setProcessMessage('Processing completed! File download started.');
 
-      if (!response.ok) {
-        throw new Error('Server returned an error while processing.');
-      }
-
-      const data = await response.json();
-      setProcessMessage(data.message || 'Processing completed successfully!');
-    } catch (error) {
-      setProcessMessage(`Error: ${error.message}`);
-    } finally {
-      setIsProcessing(false);
-    }
-  };
+  } catch (error) {
+    setProcessMessage(`Error: ${error.message}`);
+  } finally {
+    setIsProcessing(false);
+  }
+};
 
   return (
     <div className="jha-page-container">
