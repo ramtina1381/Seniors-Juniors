@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 import argparse
 import json
 import xlwings as xw
+import base64
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Process JHA PDF files.")
@@ -34,12 +35,40 @@ OUTPUT_EXCEL = os.path.join(OUTPUT_DIR, "jha_processed.xlsx")
 TIMEZONE = pytz.timezone('America/New_York')
 
 def extract_text_from_pdf(pdf_path):
-    """Extract text from PDF file"""
+    """Extract text from PDF file and save raw output for debugging"""
+    debug_dir = os.path.join(os.path.dirname(pdf_path), "..", "debug")
+    os.makedirs(debug_dir, exist_ok=True)
+    
     with open(pdf_path, 'rb') as file:
         reader = PdfReader(file)
         text = ""
-        for page in reader.pages:
-            text += page.extract_text()
+        
+        # Extract text page by page
+        for i, page in enumerate(reader.pages):
+            page_text = page.extract_text()
+            text += page_text
+            
+            # Save individual page extracts
+            page_debug_path = os.path.join(debug_dir, f"page_{i+1}_debug.txt")
+            with open(page_debug_path, 'w', encoding='utf-8') as f:
+                f.write(f"=== PAGE {i+1} ===\n")
+                f.write(page_text)
+                f.write("\n\n")
+    
+    # Save complete extracted text
+    full_debug_path = os.path.join(debug_dir, "full_extracted_text.txt")
+    with open(full_debug_path, 'w', encoding='utf-8') as f:
+        f.write("=== COMPLETE EXTRACTED TEXT ===\n")
+        f.write(text)
+        f.write("\n\n")
+        
+        # Add analysis notes
+        f.write(f"=== ANALYSIS ===\n")
+        f.write(f"Total pages: {len(reader.pages)}\n")
+        f.write(f"Total characters: {len(text)}\n")
+        f.write(f"Extraction complete: {bool(text)}\n")
+    
+    print(f"Debug files saved to: {debug_dir}")
     return text
 
 def parse_pdf_with_ai(pdf_text):
@@ -100,6 +129,7 @@ def process_pdf_files():
     
     return sorted(results, key=lambda x: x['date'])
 
+
 def update_excel_file(jha_data):
     excel_dir = EXCEL_TEMPLATE
     excel_file = None
@@ -112,7 +142,7 @@ def update_excel_file(jha_data):
     if not excel_file:
         raise FileNotFoundError(f"No Excel (.xlsb) file found in directory: {excel_dir}")
 
-    # Open workbook with xlwings (preserves xlsb format and macros)
+    # Open workbook with xlwings
     app = xw.App(visible=False)
     wb = app.books.open(excel_file)
 
@@ -125,20 +155,26 @@ def update_excel_file(jha_data):
                 print(f"Warning: Sheet '{sheet_name}' not found. Skipping.")
                 continue
 
-            # Update values (adjust cell positions based on your actual template layout)
-            sheet.range('B1').value = data['date_str']  # Adjust cell address accordingly
-            sheet.range('B2').value = 'YES' if data['working_at_heights'] else 'NO'
-            sheet.range('B3').value = data['total_persons']
+            # Update values using named ranges
+            sheet.range('DATE').value = data['date_str']
+            sheet.range('DAY').value = day
+            sheet.range('HEIGHTS').value = 'YES' if data['working_at_heights'] else 'NO'
+            sheet.range('CREW_NUM').value = data['total_persons']
 
-            # Start inserting person data at row 5
-            start_row = 5
-            for i, person in enumerate(data['persons']):
-                sheet.range(f'A{start_row + i}').value = person['name']
-                sheet.range(f'B{start_row + i}').value = person.get('nwsa_number', 'N/A')
+            # Clear previous person data (in case there were fewer people last time)
+            for i in range(1, 5):
+                sheet.range(f'NAME{i}').value = None
+                sheet.range(f'NWSA{i}').value = None
 
-        # Save back to same .xlsb file
-        wb.save()
-        print(f"Updated Excel file saved to: {excel_file}")
+            # Insert person data using named ranges
+            for i, person in enumerate(data['persons'][:4]):  # Only first 4 persons (to match your NAME1-4 ranges)
+                sheet.range(f'NAME{i+1}').value = person['name']
+                sheet.range(f'NWSA{i+1}').value = person.get('nwsa_number', 'N/A')
+
+        # Save to output directory
+        output_file = os.path.join(OUTPUT_DIR, 'jha_processed.xlsb')
+        wb.save(output_file)
+        print(f"Updated Excel file saved to: {output_file}")
     finally:
         wb.close()
         app.quit()
