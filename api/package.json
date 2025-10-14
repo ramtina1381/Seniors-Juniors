@@ -1,0 +1,14 @@
+{
+  "name": "vercel-api",
+  "version": "1.0.0",
+  "description": "Vercel API routes for equipment processor",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5",
+    "express-fileupload": "^1.5.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
