@@ -20,10 +20,10 @@ Edit `client/src/config/api.js` and replace the placeholder URL:
 
 ```javascript
 // Change this line:
-baseURL: 'https://your-backend-app.vercel.app', // Replace with your actual backend URL
+baseURL: 'https://seniors-juniors-server.vercel.app/', // Replace with your actual backend URL
 
 // To your actual backend URL:
-baseURL: 'https://your-actual-backend-url.vercel.app',
+baseURL: 'https://seniors-juniors-server.vercel.app/',
 ```
 
 ### **Step 2: Deploy Your Backend to Vercel**
@@ -49,7 +49,7 @@ const API_CONFIG = {
   },
   
   production: {
-    baseURL: 'https://your-actual-backend-url.vercel.app', // ← Update this
+    baseURL: 'https://seniors-juniors-server.vercel.app/', // ← Update this
     apiPrefix: '/api'
   }
 };
@@ -75,7 +75,7 @@ CORS_ORIGIN=https://seniors-juniors-client-7yfg1hm21-ramtins-projects-7f18fc1c.v
 buildApiUrl('/process') → 'http://localhost:5002/api/process'
 
 // Production (Vercel)
-buildApiUrl('/process') → 'https://your-backend.vercel.app/api/process'
+buildApiUrl('/process') → 'https://seniors-juniors-server.vercel.app//api/process'
 ```
 
 ## 📋 **Complete Setup Checklist**
@@ -95,7 +95,7 @@ buildApiUrl('/process') → 'https://your-backend.vercel.app/api/process'
 
 ### **Test Backend Health:**
 ```bash
-curl https://your-backend.vercel.app/api/health
+curl https://seniors-juniors-server.vercel.app//api/health
 ```
 
 ### **Test Frontend-Backend Connection:**
