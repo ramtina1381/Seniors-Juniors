@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { buildApiUrl } from '../config/api';
 
 const JHAFileUpload = ({ onUploadComplete, location, setLocation }) => {
   const [pdfFiles, setPdfFiles] = useState([]);
@@ -45,7 +46,7 @@ const JHAFileUpload = ({ onUploadComplete, location, setLocation }) => {
         });
 
         await axios.post(
-          `http://localhost:5002/api/upload/jha/${location}/pdfs`,
+          buildApiUrl(`/upload/jha/${location}/pdfs`),
           pdfFormData,
           {
             headers: { 'Content-Type': 'multipart/form-data' },
@@ -64,7 +65,7 @@ const JHAFileUpload = ({ onUploadComplete, location, setLocation }) => {
       excelFormData.append('file', excelFile);
 
       await axios.post(
-        `http://localhost:5002/api/upload/jha/${location}/excel`,
+        buildApiUrl(`/upload/jha/${location}/excel`),
         excelFormData,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

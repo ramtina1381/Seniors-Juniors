@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import JHAFileUpload from '../components/JHAFileUpload';
 import ProcessButton from '../components/ProcessButton';
+import { buildApiUrl } from '../config/api';
 import '../styles/JHA.css';
 
 
@@ -30,7 +31,7 @@ const JHA = () => {
   setProcessMessage('');
 
   try {
-    const response = await fetch(`http://localhost:5002/api/jhaprocess/${location}`, {
+    const response = await fetch(buildApiUrl(`/jhaprocess/${location}`), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

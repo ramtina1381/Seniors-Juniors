@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { buildUrl } from '../config/api';
 
 function Credit() {
   const [file, setFile] = useState(null);
@@ -18,9 +19,9 @@ function Credit() {
     formData.append('pdf', file);
 
     try {
-      const res = await axios.post('http://localhost:5002/fill-pdf', formData);
+      const res = await axios.post(buildUrl('/fill-pdf'), formData);
       setMessage(res.data.message);
-      setDownloadLink('http://localhost:5000/filled_application.pdf');
+      setDownloadLink(buildUrl('/filled_application.pdf'));
     } catch (err) {
       setMessage('Failed to process PDF.');
     }

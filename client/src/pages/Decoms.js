@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import FileUpload from '../components/FileUpload';
 import ProcessButton from '../components/ProcessButton';
+import { buildUrl, buildApiUrl } from '../config/api';
 import '../styles/Decoms.css';
 
 function Decoms() {
@@ -23,22 +24,22 @@ const handleProcess = async () => {
     if (!location) throw new Error('Location is missing');
 
     // First verify backend is reachable
-    // First verify backend is reachable
     try {
-      const healthCheck = await fetch('http://localhost:5002', {
+      const healthCheck = await fetch(buildUrl('/'), {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
       });
       
-  if (!healthCheck.ok) {
-    const healthText = await healthCheck.text();
-    throw new Error(`Backend responded with: ${healthText}`);
-  }
-} catch (healthError) {
-  throw new Error(`Cannot connect to backend: ${healthError.message}`);
-}
+      if (!healthCheck.ok) {
+        const healthText = await healthCheck.text();
+        throw new Error(`Backend responded with: ${healthText}`);
+      }
+    } catch (healthError) {
+      throw new Error(`Cannot connect to backend: ${healthError.message}`);
+    }
+    
     // Make the API call
-    const response = await fetch('http://localhost:5002/api/process', {
+    const response = await fetch(buildApiUrl('/process'), {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ locationNumber: location })

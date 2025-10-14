@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
+import { buildApiUrl } from '../config/api';
 
 const FileUpload = ({ onUploadComplete, location: propLocation, setLocation }) => {
   const [photoFiles, setPhotoFiles] = useState([]);
@@ -44,7 +45,7 @@ const FileUpload = ({ onUploadComplete, location: propLocation, setLocation }) =
       });
 
       await axios.post(
-        `http://localhost:5002/api/upload/photos/${propLocation}`,
+        buildApiUrl(`/upload/photos/${propLocation}`),
         photoFormData,
         {
           headers: {
@@ -64,7 +65,7 @@ const FileUpload = ({ onUploadComplete, location: propLocation, setLocation }) =
       manufacturerFormData.append('file', manufacturerFile);
 
       await axios.post(
-        `http://localhost:5002/api/upload/manufacturer/${propLocation}`,
+        buildApiUrl(`/upload/manufacturer/${propLocation}`),
         manufacturerFormData,
         {
           headers: {
