@@ -2,19 +2,14 @@ const express = require('express');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const { exec } = require('child_process');
+const pathConfig = require('./config/paths');
+const envConfig = require('./config/environment');
 
 const app = express();
 
-app.use(cors({
-  origin: '*', // For development only, tighten this for production
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true
-}));
-
-// app.options('*', cors()); // Handle preflight for all routes
-
-app.use(fileUpload());
+// Use environment-based configuration
+app.use(cors(envConfig.get('cors')));
+app.use(fileUpload(envConfig.get('fileUpload')));
 app.use(express.json());
 
 // Routes
@@ -29,5 +24,9 @@ app.get('/', (req, res) => {
   res.status(200).json({ status: 'Backend is running' });
 });
 
-const PORT = 5002;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = envConfig.get('port');
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} in ${envConfig.getEnvironment()} mode`);
+  console.log(`Uploads directory: ${pathConfig.getUploadsDir()}`);
+  console.log(`Output directory: ${pathConfig.getOutputDir()}`);
+});

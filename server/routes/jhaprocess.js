@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const util = require('util');
 const { exec } = require('child_process');
+const pathConfig = require('../config/paths');
+const envConfig = require('../config/environment');
 
 const router = express.Router();
 const execPromise = util.promisify(exec);
@@ -37,10 +39,10 @@ router.post('/:location', async (req, res) => {
         console.log(`[${requestId}] Starting processing for location: ${location}`);
 
         const paths = {
-            pythonScript: path.join(__dirname, '../python/process_jha.py'),
-            outputDir: path.join(__dirname, '../../output/jha', location),  // Updated output path
-            uploadsRoot: path.join(__dirname, '../../uploads'),
-            locationDocs: path.join(__dirname, '../../uploads/jha', location)
+            pythonScript: pathConfig.getJhaProcessorScript(),
+            outputDir: pathConfig.getJhaOutputDir(location),
+            uploadsRoot: pathConfig.getUploadsDir(),
+            locationDocs: pathConfig.getJhaDir(location)
         };
 
         // Validate paths
@@ -58,8 +60,8 @@ router.post('/:location', async (req, res) => {
         // Ensure output directory exists
         fs.mkdirSync(paths.outputDir, { recursive: true });
 
-        // Check for valid files (PDFs)
-        const pdfFiles = fs.readdirSync(path.join(paths.locationDocs, 'pdfs'))
+        // Check for valid files (PDFs) using pathConfig
+        const pdfFiles = fs.readdirSync(pathConfig.getJhaPdfsDir(location))
             .filter(file => file.endsWith('.pdf'));
 
         if (pdfFiles.length === 0) {
@@ -73,8 +75,8 @@ router.post('/:location', async (req, res) => {
         console.log(`[${requestId}] Running: ${command}`);
 
         const { stdout, stderr } = await execPromise(command, {
-            timeout: 300000,
-            maxBuffer: 1024 * 1024 * 10
+            timeout: envConfig.get('python').timeout,
+            maxBuffer: envConfig.get('python').maxBuffer
         });
 
         console.log(`[${requestId}] Python stdout:\n${stdout}`);
@@ -82,8 +84,8 @@ router.post('/:location', async (req, res) => {
             console.error(`[${requestId}] Python stderr:\n${stderr}`);
         }
 
-        // Check for the updated .xlsb file (now saved to output dir by Python)
-        const resultFile = path.join(paths.outputDir, 'jha_processed.xlsb');
+        // Check for the updated .xlsb file using pathConfig
+        const resultFile = pathConfig.getJhaOutputFile(location, 'jha_processed.xlsb');
         if (!fs.existsSync(resultFile)) {
             throw new Error('Expected .xlsb file was not generated in output directory');
         }

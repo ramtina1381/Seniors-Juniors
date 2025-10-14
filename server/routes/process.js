@@ -4,6 +4,8 @@ const path = require('path');
 const router = express.Router();
 const { exec } = require('child_process');
 const util = require('util');
+const pathConfig = require('../config/paths');
+const envConfig = require('../config/environment');
 
 // Convert exec to promise-based for better error handling
 const execPromise = util.promisify(require('child_process').exec);
@@ -40,13 +42,13 @@ router.post('/', async (req, res) => {
 
         console.log(`[${requestId}] Processing request for location: ${locationNumber}`);
 
-        // Path configuration with validation
+        // Path configuration using pathConfig
         const paths = {
-            pythonScript: path.join(__dirname, '../python/process_equipment.py'),
-            output: path.join(__dirname, '../../output'),
-            uploads: path.join(__dirname, '../../uploads'),
-            photos: path.join(__dirname, '../../uploads/photos', locationNumber),
-            manufacturer: path.join(__dirname, '../../uploads/manufacturer', locationNumber)
+            pythonScript: pathConfig.getEquipmentProcessorScript(),
+            output: pathConfig.getOutputDir(),
+            uploads: pathConfig.getUploadsDir(),
+            photos: pathConfig.getPhotosDir(locationNumber),
+            manufacturer: pathConfig.getManufacturerDir(locationNumber)
         };
 
         // Verify all paths exist
@@ -98,10 +100,10 @@ router.post('/', async (req, res) => {
         const command = `python "${paths.pythonScript}" --location "${locationNumber}" --output "${paths.output}" --uploads_root "${paths.uploads}"`;
         console.log(`[${requestId}] Executing command: ${command}`);
 
-        // Execute Python script with timeout
+        // Execute Python script with environment-based timeout
         const { stdout, stderr } = await execPromise(command, { 
-            timeout: 300000, // 5 minute timeout
-            maxBuffer: 1024 * 1024 * 10 // 10MB buffer
+            timeout: envConfig.get('python').timeout,
+            maxBuffer: envConfig.get('python').maxBuffer
         });
 
         // Log Python script output
@@ -118,8 +120,8 @@ router.post('/', async (req, res) => {
             throw error;
         }
 
-        // Verify result file
-        const resultFile = path.join(paths.output, 'equipment_inventory.csv');
+        // Verify result file using pathConfig
+        const resultFile = pathConfig.getOutputFile(locationNumber, 'equipment_inventory.csv');
         if (!fs.existsSync(resultFile)) {
             const error = new Error('Processing completed but no result file was generated');
             error.status = 500;

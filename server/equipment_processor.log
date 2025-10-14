@@ -1176,3 +1176,749 @@ no_match    3
 2025-05-23 11:02:16,847 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
 2025-05-23 11:02:16,854 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/7778/IMG-20241217-WA0053.jpg
 2025-05-23 11:02:36,642 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-12 14:38:44,558 - INFO - ============================================================
+2025-06-12 14:38:44,559 - INFO - Starting equipment processing at 2025-06-12 14:38:44.558932
+2025-06-12 14:38:44,559 - INFO - ============================================================
+2025-06-12 14:38:44,693 - INFO - OpenAI API configured successfully
+2025-06-12 14:38:44,693 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0040.jpg
+2025-06-12 14:39:01,375 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 14:39:01,400 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0041.jpg
+2025-06-12 14:39:13,250 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 14:39:13,261 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0039.jpg
+2025-06-12 14:39:25,098 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 14:39:45,759 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-12 15:54:51,723 - INFO - ============================================================
+2025-06-12 15:54:51,724 - INFO - Starting equipment processing at 2025-06-12 15:54:51.724110
+2025-06-12 15:54:51,724 - INFO - ============================================================
+2025-06-12 15:54:51,839 - INFO - OpenAI API configured successfully
+2025-06-12 15:54:51,839 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0040.jpg
+2025-06-12 15:55:07,001 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 15:55:07,022 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0040.jpg
+2025-06-12 15:55:07,022 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0041.jpg
+2025-06-12 15:55:24,870 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 15:55:24,885 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0039.jpg
+2025-06-12 15:55:36,747 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 15:55:51,925 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-12 16:00:30,812 - INFO - ============================================================
+2025-06-12 16:00:30,812 - INFO - Starting equipment processing at 2025-06-12 16:00:30.812768
+2025-06-12 16:00:30,812 - INFO - ============================================================
+2025-06-12 16:00:30,896 - INFO - OpenAI API configured successfully
+2025-06-12 16:00:30,896 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0040.jpg
+2025-06-12 16:00:40,815 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:00:40,835 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0041.jpg
+2025-06-12 16:00:54,439 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:00:54,459 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/5555/IMG-20250611-WA0039.jpg
+2025-06-12 16:01:08,523 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:01:18,262 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-12 16:04:38,316 - INFO - ============================================================
+2025-06-12 16:04:38,316 - INFO - Starting equipment processing at 2025-06-12 16:04:38.316646
+2025-06-12 16:04:38,316 - INFO - ============================================================
+2025-06-12 16:04:38,386 - INFO - OpenAI API configured successfully
+2025-06-12 16:04:38,386 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-12 16:04:51,081 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:04:51,108 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-12 16:04:51,109 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0033.jpg
+2025-06-12 16:05:00,799 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:00,804 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0027.jpg
+2025-06-12 16:05:12,781 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:12,803 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0030.jpg
+2025-06-12 16:05:22,855 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:22,867 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0034.jpg
+2025-06-12 16:05:34,175 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:34,181 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0035.jpg
+2025-06-12 16:05:44,732 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:44,751 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0037.jpg
+2025-06-12 16:05:55,988 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:05:55,995 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0036.jpg
+2025-06-12 16:06:10,535 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:06:10,549 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0038.jpg
+2025-06-12 16:06:24,986 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:06:24,995 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0029.jpg
+2025-06-12 16:06:33,054 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:06:33,058 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 11.58.11_c28cb00f.jpg
+2025-06-12 16:06:49,700 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:06:49,705 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0028.jpg
+2025-06-12 16:07:00,189 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:07:25,690 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-12 16:21:10,207 - INFO - ============================================================
+2025-06-12 16:21:10,208 - INFO - Starting equipment processing at 2025-06-12 16:21:10.208032
+2025-06-12 16:21:10,208 - INFO - ============================================================
+2025-06-12 16:21:10,289 - INFO - OpenAI API configured successfully
+2025-06-12 16:21:10,289 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-12 16:21:23,550 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:21:23,574 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-12 16:21:23,574 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0033.jpg
+2025-06-12 16:21:36,657 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:21:36,663 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0027.jpg
+2025-06-12 16:21:49,862 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:21:49,875 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0030.jpg
+2025-06-12 16:22:01,232 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:22:01,238 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0034.jpg
+2025-06-12 16:22:17,520 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:22:17,530 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0035.jpg
+2025-06-12 16:22:32,464 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:22:32,468 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0037.jpg
+2025-06-12 16:22:44,243 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:22:44,249 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0036.jpg
+2025-06-12 16:22:55,710 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:22:55,715 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.04.20_6b744543.jpg
+2025-06-12 16:23:08,483 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:23:08,489 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_921acbbc.jpg
+2025-06-12 16:23:23,564 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:23:23,571 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_940daa26.jpg
+2025-06-12 16:23:38,622 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:23:38,628 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_940daa26.jpg
+2025-06-12 16:23:38,629 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0038.jpg
+2025-06-12 16:23:48,815 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:23:48,822 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0029.jpg
+2025-06-12 16:24:01,278 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:24:01,286 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 11.58.11_c28cb00f.jpg
+2025-06-12 16:24:17,026 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:24:17,036 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 11.58.11_c28cb00f.jpg
+2025-06-12 16:24:17,037 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_d4cc8281.jpg
+2025-06-12 16:24:34,638 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:24:34,651 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_d4cc8281.jpg
+2025-06-12 16:24:34,652 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0028.jpg
+2025-06-12 16:24:45,280 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-12 16:25:11,106 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-14 10:36:36,562 - INFO - ============================================================
+2025-06-14 10:36:36,563 - INFO - Starting equipment processing at 2025-06-14 10:36:36.563324
+2025-06-14 10:36:36,563 - INFO - ============================================================
+2025-06-14 10:36:36,680 - INFO - OpenAI API configured successfully
+2025-06-14 10:36:36,681 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-14 10:36:57,842 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:36:57,865 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0026.jpg
+2025-06-14 10:36:57,865 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0033.jpg
+2025-06-14 10:37:05,420 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:05,425 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0027.jpg
+2025-06-14 10:37:17,022 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:17,029 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0030.jpg
+2025-06-14 10:37:25,800 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:25,809 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0034.jpg
+2025-06-14 10:37:33,043 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:33,045 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0035.jpg
+2025-06-14 10:37:42,691 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:42,700 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0037.jpg
+2025-06-14 10:37:56,517 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:37:56,530 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0036.jpg
+2025-06-14 10:38:06,356 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:06,364 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0044.jpg
+2025-06-14 10:38:18,174 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:18,185 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.04.20_6b744543.jpg
+2025-06-14 10:38:29,439 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:29,447 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0043.jpg
+2025-06-14 10:38:38,208 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:38,213 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0042.jpg
+2025-06-14 10:38:45,396 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:45,400 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0040.jpg
+2025-06-14 10:38:53,744 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:38:53,756 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0041.jpg
+2025-06-14 10:39:02,976 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:02,991 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_921acbbc.jpg
+2025-06-14 10:39:13,062 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:13,066 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_921acbbc.jpg
+2025-06-14 10:39:13,067 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_940daa26.jpg
+2025-06-14 10:39:24,436 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:24,448 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_940daa26.jpg
+2025-06-14 10:39:24,449 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0038.jpg
+2025-06-14 10:39:32,328 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:32,340 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0039.jpg
+2025-06-14 10:39:41,535 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:41,549 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0029.jpg
+2025-06-14 10:39:51,192 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:39:51,205 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 11.58.11_c28cb00f.jpg
+2025-06-14 10:40:02,016 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:40:02,028 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 11.58.11_c28cb00f.jpg
+2025-06-14 10:40:02,028 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_d4cc8281.jpg
+2025-06-14 10:40:12,555 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:40:12,556 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/WhatsApp Image 2025-06-11 at 12.08.26_d4cc8281.jpg
+2025-06-14 10:40:12,557 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102015/IMG-20250611-WA0028.jpg
+2025-06-14 10:40:18,908 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 10:40:45,734 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-14 11:25:57,401 - INFO - ============================================================
+2025-06-14 11:25:57,401 - INFO - Starting equipment processing at 2025-06-14 11:25:57.401648
+2025-06-14 11:25:57,401 - INFO - ============================================================
+2025-06-14 11:25:57,467 - INFO - OpenAI API configured successfully
+2025-06-14 11:25:57,468 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0014.jpg
+2025-06-14 11:26:14,934 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:26:14,963 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0015.jpg
+2025-06-14 11:26:33,625 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:26:33,635 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0012.jpg
+2025-06-14 11:26:48,136 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:26:48,148 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0012.jpg
+2025-06-14 11:26:48,149 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0013.jpg
+2025-06-14 11:27:02,661 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:27:02,680 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/IMG-20250612-WA0011.jpg
+2025-06-14 11:27:17,336 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:27:17,346 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/WhatsApp Image 2025-06-12 at 14.36.55_5d6408ae.jpg
+2025-06-14 11:27:30,735 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-14 11:27:30,743 - WARNING - No content returned from OpenAI for image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102016/WhatsApp Image 2025-06-12 at 14.36.55_5d6408ae.jpg
+2025-06-14 11:27:45,835 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-16 20:51:59,484 - INFO - ============================================================
+2025-06-16 20:51:59,484 - INFO - Starting equipment processing at 2025-06-16 20:51:59.484827
+2025-06-16 20:51:59,484 - INFO - ============================================================
+2025-06-16 20:51:59,554 - INFO - OpenAI API configured successfully
+2025-06-16 20:51:59,555 - ERROR - Unexpected error: No module named 'imagehash'
+2025-06-16 20:52:51,685 - INFO - ============================================================
+2025-06-16 20:52:51,685 - INFO - Starting equipment processing at 2025-06-16 20:52:51.685604
+2025-06-16 20:52:51,685 - INFO - ============================================================
+2025-06-16 20:52:51,719 - INFO - OpenAI API configured successfully
+2025-06-16 20:52:51,905 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-16 20:53:13,287 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 20:53:26,018 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-16 20:56:26,595 - INFO - ============================================================
+2025-06-16 20:56:26,596 - INFO - Starting equipment processing at 2025-06-16 20:56:26.596279
+2025-06-16 20:56:26,596 - INFO - ============================================================
+2025-06-16 20:56:26,659 - INFO - OpenAI API configured successfully
+2025-06-16 20:56:26,709 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-16 20:56:43,736 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 20:56:53,878 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-16 21:07:52,732 - INFO - ============================================================
+2025-06-16 21:07:52,732 - INFO - Starting equipment processing at 2025-06-16 21:07:52.732585
+2025-06-16 21:07:52,732 - INFO - ============================================================
+2025-06-16 21:07:52,804 - INFO - OpenAI API configured successfully
+2025-06-16 21:07:52,855 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-16 21:08:09,202 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 21:08:18,182 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-16 21:54:38,923 - INFO - ============================================================
+2025-06-16 21:54:38,923 - INFO - Starting equipment processing at 2025-06-16 21:54:38.923457
+2025-06-16 21:54:38,923 - INFO - ============================================================
+2025-06-16 21:54:38,984 - INFO - OpenAI API configured successfully
+2025-06-16 21:54:39,035 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-16 21:54:51,026 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 21:55:01,672 - INFO - Created Monday.com item ID: 9390000461
+2025-06-16 21:55:02,284 - ERROR - Monday.com upload failed: 400 Client Error: Bad Request for url: https://api.monday.com/v2/file
+2025-06-16 21:55:02,292 - WARNING - Failed to upload /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg to Monday.com
+2025-06-16 21:55:02,312 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-16 22:04:27,567 - INFO - ============================================================
+2025-06-16 22:04:27,567 - INFO - Starting equipment processing at 2025-06-16 22:04:27.567756
+2025-06-16 22:04:27,567 - INFO - ============================================================
+2025-06-16 22:04:27,633 - INFO - OpenAI API configured successfully
+2025-06-16 22:04:27,686 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-16 22:04:41,435 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-16 22:04:51,332 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 09:13:27,202 - INFO - ============================================================
+2025-06-17 09:13:27,202 - INFO - Starting equipment processing at 2025-06-17 09:13:27.202807
+2025-06-17 09:13:27,202 - INFO - ============================================================
+2025-06-17 09:13:27,267 - INFO - OpenAI API configured successfully
+2025-06-17 09:13:27,317 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 09:13:38,226 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 09:13:47,548 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 09:23:02,884 - INFO - ============================================================
+2025-06-17 09:23:02,885 - INFO - Starting equipment processing at 2025-06-17 09:23:02.884985
+2025-06-17 09:23:02,885 - INFO - ============================================================
+2025-06-17 09:23:02,948 - INFO - OpenAI API configured successfully
+2025-06-17 09:23:02,998 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 09:23:12,980 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 09:23:21,876 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 09:33:44,401 - INFO - ============================================================
+2025-06-17 09:33:44,401 - INFO - Starting equipment processing at 2025-06-17 09:33:44.401871
+2025-06-17 09:33:44,402 - INFO - ============================================================
+2025-06-17 09:33:44,463 - INFO - OpenAI API configured successfully
+2025-06-17 09:33:44,512 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 09:33:56,217 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 09:34:05,245 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 09:52:55,073 - INFO - ============================================================
+2025-06-17 09:52:55,073 - INFO - Starting equipment processing at 2025-06-17 09:52:55.073701
+2025-06-17 09:52:55,073 - INFO - ============================================================
+2025-06-17 09:52:55,131 - INFO - OpenAI API configured successfully
+2025-06-17 09:52:55,180 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 09:53:16,566 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 09:53:25,408 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 09:58:28,159 - INFO - ============================================================
+2025-06-17 09:58:28,160 - INFO - Starting equipment processing at 2025-06-17 09:58:28.160492
+2025-06-17 09:58:28,161 - INFO - ============================================================
+2025-06-17 09:58:28,240 - INFO - OpenAI API configured successfully
+2025-06-17 09:58:28,292 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 09:58:41,387 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 09:58:50,543 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:17:14,671 - INFO - ============================================================
+2025-06-17 12:17:14,672 - INFO - Starting equipment processing at 2025-06-17 12:17:14.672221
+2025-06-17 12:17:14,672 - INFO - ============================================================
+2025-06-17 12:17:14,749 - INFO - OpenAI API configured successfully
+2025-06-17 12:17:14,810 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:17:25,706 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 12:17:34,896 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:20:14,689 - INFO - ============================================================
+2025-06-17 12:20:14,690 - INFO - Starting equipment processing at 2025-06-17 12:20:14.690284
+2025-06-17 12:20:14,690 - INFO - ============================================================
+2025-06-17 12:20:14,759 - INFO - OpenAI API configured successfully
+2025-06-17 12:20:14,812 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:20:24,901 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 12:20:33,751 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:25:19,932 - INFO - ============================================================
+2025-06-17 12:25:19,933 - INFO - Starting equipment processing at 2025-06-17 12:25:19.933093
+2025-06-17 12:25:19,933 - INFO - ============================================================
+2025-06-17 12:25:19,933 - INFO - Checking Monday.com configuration:
+2025-06-17 12:25:19,933 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-17 12:25:19,933 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-17 12:25:20,016 - INFO - OpenAI API configured successfully
+2025-06-17 12:25:20,074 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:25:20,075 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:25:29,937 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 12:25:29,957 - INFO - Extracted data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU850 R3A 850 MHz feeder unit (FU12 08) with TX A and RX A1–A3 ports', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}
+2025-06-17 12:25:29,984 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-17 12:25:38,900 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-17 12:25:38,905 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-17 12:25:38,939 - INFO - 
+Processing row 0:
+2025-06-17 12:25:38,939 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU850 R3A 850 MHz feeder unit (FU12 08) with TX A and RX A1\u2013A3 ports",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-17 12:25:38,949 - INFO - Exact match found: CEQ.28811
+2025-06-17 12:25:38,969 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-17 12:25:38,974 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:25:38,974 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-06-17 12:30:55,328 - INFO - ============================================================
+2025-06-17 12:30:55,329 - INFO - Starting equipment processing at 2025-06-17 12:30:55.329059
+2025-06-17 12:30:55,329 - INFO - ============================================================
+2025-06-17 12:30:55,329 - INFO - Checking Monday.com configuration:
+2025-06-17 12:30:55,329 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-17 12:30:55,329 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-17 12:30:55,391 - INFO - OpenAI API configured successfully
+2025-06-17 12:30:55,437 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:30:55,437 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:31:06,784 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 12:31:06,798 - INFO - Extracted data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU 850 R3A radio transceiver module (TX/RX A)', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}
+2025-06-17 12:31:06,820 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-17 12:31:15,722 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-17 12:31:15,727 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-17 12:31:15,768 - INFO - 
+Processing row 0:
+2025-06-17 12:31:15,768 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU 850 R3A radio transceiver module (TX/RX A)",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-17 12:31:15,778 - INFO - Exact match found: CEQ.28811
+2025-06-17 12:31:15,801 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-17 12:31:15,805 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:31:15,805 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-06-17 12:42:17,592 - INFO - ============================================================
+2025-06-17 12:42:17,593 - INFO - Starting equipment processing at 2025-06-17 12:42:17.592986
+2025-06-17 12:42:17,593 - INFO - ============================================================
+2025-06-17 12:42:17,593 - INFO - Checking Monday.com configuration:
+2025-06-17 12:42:17,593 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-17 12:42:17,593 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-17 12:42:17,661 - INFO - OpenAI API configured successfully
+2025-06-17 12:42:17,713 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:42:17,713 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:42:33,158 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-17 12:42:33,184 - INFO - Extracted data: [{'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU 850 R3A 850 MHz radio unit with TX A and RX A1–A3 connectors', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}]
+2025-06-17 12:42:33,218 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-17 12:42:42,044 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-17 12:42:42,052 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-17 12:42:42,087 - INFO - 
+Processing row 0:
+2025-06-17 12:42:42,087 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU 850 R3A 850 MHz radio unit with TX A and RX A1\u2013A3 connectors",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-17 12:42:42,099 - INFO - Exact match found: CEQ.28811
+2025-06-17 12:42:42,099 - INFO - 
+Attempting Monday.com upload with:
+2025-06-17 12:42:42,099 - INFO - Item data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU 850 R3A 850 MHz radio unit with TX A and RX A1–A3 connectors', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg', 'match_method': 'exact_part_number', 'item_number': 'CEQ.28811'}
+2025-06-17 12:42:42,099 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:42:42,099 - INFO - ========================================
+2025-06-17 12:42:42,099 - INFO - Starting Monday.com upload process
+2025-06-17 12:42:42,099 - INFO - Item data: serial_number                                           TU8FB45524
+part_number                                             KRC11821/1
+asset_tag                                              ATT02208557
+description      Ericsson FU 850 R3A 850 MHz radio unit with TX...
+image_file       /Users/ramtinabolfazli/Documents/Work/Seniors ...
+match_method                                     exact_part_number
+item_number                                              CEQ.28811
+Name: 0, dtype: object
+2025-06-17 12:42:42,099 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-17 12:42:42,100 - INFO - Monday API Key: *****
+2025-06-17 12:42:42,100 - INFO - Board ID: 9389644156
+2025-06-17 12:42:42,100 - INFO - Prepared column values:
+2025-06-17 12:42:42,100 - INFO -   text_mks0f8z3: TU8FB45524
+2025-06-17 12:42:42,100 - INFO -   text_mks0ee0c: KRC11821/1
+2025-06-17 12:42:42,100 - INFO -   text_mks0hc83: ATT02208557
+2025-06-17 12:42:42,100 - INFO -   text_mks0345h: Ericsson FU 850 R3A 850 MHz radio unit with TX A and RX A1–A3 connectors
+2025-06-17 12:42:42,100 - INFO - Item name: CEQ.28811
+2025-06-17 12:42:42,100 - INFO - Preparing GraphQL request:
+2025-06-17 12:42:42,100 - INFO - Query: 
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        
+2025-06-17 12:42:42,100 - INFO - Variables: {'boardId': '9389644156', 'itemName': 'CEQ.28811', 'columnValues': '{"text_mks0f8z3": "TU8FB45524", "text_mks0ee0c": "KRC11821/1", "text_mks0hc83": "ATT02208557", "text_mks0345h": "Ericsson FU 850 R3A 850 MHz radio unit with TX A and RX A1\\u2013A3 connectors"}'}
+2025-06-17 12:42:42,100 - INFO - Sending request to Monday.com API...
+2025-06-17 12:42:43,493 - INFO - Received response. Status code: 200
+2025-06-17 12:42:43,493 - INFO - Response text: {"data":{"create_item":{"id":"9395520789"}},"extensions":{"request_id":"c743725c-7216-915b-81b8-4186b153bd28"}}
+2025-06-17 12:42:43,493 - INFO - Full response data: {'data': {'create_item': {'id': '9395520789'}}, 'extensions': {'request_id': 'c743725c-7216-915b-81b8-4186b153bd28'}}
+2025-06-17 12:42:43,493 - INFO - Successfully created Monday.com item ID: 9395520789
+2025-06-17 12:42:43,493 - INFO - Preparing image upload...
+2025-06-17 12:42:43,494 - INFO - Sending image upload request...
+2025-06-17 12:42:44,214 - INFO - Image upload response status: 200
+2025-06-17 12:42:44,215 - INFO - Image upload response text: {"errors":[{"message":"Variable $file of type File! was provided invalid value","locations":[{"line":2,"column":35}],"extensions":{"value":null,"problems":[{"path":[],"explanation":"Expected value to not be null"}]}}],"account_id":8417345}
+2025-06-17 12:42:44,215 - INFO - Image successfully uploaded to Monday.com
+2025-06-17 12:42:44,224 - INFO - Successfully uploaded /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg to Monday.com
+2025-06-17 12:42:44,245 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-17 12:42:44,255 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-17 12:42:44,255 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-06-18 11:49:05,111 - INFO - ============================================================
+2025-06-18 11:49:05,112 - INFO - Starting equipment processing at 2025-06-18 11:49:05.112258
+2025-06-18 11:49:05,112 - INFO - ============================================================
+2025-06-18 11:49:05,112 - INFO - Checking Monday.com configuration:
+2025-06-18 11:49:05,112 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-18 11:49:05,112 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-18 11:49:05,174 - INFO - OpenAI API configured successfully
+2025-06-18 11:49:05,227 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:49:05,227 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:49:18,926 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-18 11:49:18,946 - INFO - Extracted data: [{'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU12-08 FU 850 850 MHz RF transceiver module (R3A) for mobile base station', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}]
+2025-06-18 11:49:18,985 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-18 11:49:28,662 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-18 11:49:28,668 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-18 11:49:28,719 - INFO - 
+Processing row 0:
+2025-06-18 11:49:28,720 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU12-08 FU 850 850 MHz RF transceiver module (R3A) for mobile base station",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-18 11:49:28,733 - INFO - Exact match found: CEQ.28811
+2025-06-18 11:49:28,734 - INFO - 
+Attempting Monday.com upload with:
+2025-06-18 11:49:28,734 - INFO - Item data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU12-08 FU 850 850 MHz RF transceiver module (R3A) for mobile base station', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg', 'match_method': 'exact_part_number', 'item_number': 'CEQ.28811'}
+2025-06-18 11:49:28,734 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:49:28,734 - INFO - ========================================
+2025-06-18 11:49:28,734 - INFO - Starting Monday.com upload process
+2025-06-18 11:49:28,734 - INFO - Item data: serial_number                                           TU8FB45524
+part_number                                             KRC11821/1
+asset_tag                                              ATT02208557
+description      Ericsson FU12-08 FU 850 850 MHz RF transceiver...
+image_file       /Users/ramtinabolfazli/Documents/Work/Seniors ...
+match_method                                     exact_part_number
+item_number                                              CEQ.28811
+Name: 0, dtype: object
+2025-06-18 11:49:28,734 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:49:28,734 - INFO - Monday API Key: *****
+2025-06-18 11:49:28,734 - INFO - Board ID: 9389644156
+2025-06-18 11:49:28,735 - INFO - Prepared column values:
+2025-06-18 11:49:28,735 - INFO -   text_mks0f8z3: TU8FB45524
+2025-06-18 11:49:28,735 - INFO -   text_mks0ee0c: KRC11821/1
+2025-06-18 11:49:28,735 - INFO -   text_mks0hc83: ATT02208557
+2025-06-18 11:49:28,735 - INFO -   text_mks0345h: Ericsson FU12-08 FU 850 850 MHz RF transceiver module (R3A) for mobile base station
+2025-06-18 11:49:28,735 - INFO - Item name: CEQ.28811
+2025-06-18 11:49:28,735 - INFO - Preparing GraphQL request:
+2025-06-18 11:49:28,735 - INFO - Query: 
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        
+2025-06-18 11:49:28,735 - INFO - Variables: {'boardId': '9389644156', 'itemName': 'CEQ.28811', 'columnValues': '{"text_mks0f8z3": "TU8FB45524", "text_mks0ee0c": "KRC11821/1", "text_mks0hc83": "ATT02208557", "text_mks0345h": "Ericsson FU12-08 FU 850 850 MHz RF transceiver module (R3A) for mobile base station"}'}
+2025-06-18 11:49:28,735 - INFO - Sending request to Monday.com API...
+2025-06-18 11:49:30,767 - INFO - Received response. Status code: 200
+2025-06-18 11:49:30,768 - INFO - Response text: {"data":{"create_item":{"id":"9404726375"}},"extensions":{"request_id":"6524ea6d-67b6-99e0-9c58-3825a262c8eb"}}
+2025-06-18 11:49:30,769 - INFO - Full response data: {'data': {'create_item': {'id': '9404726375'}}, 'extensions': {'request_id': '6524ea6d-67b6-99e0-9c58-3825a262c8eb'}}
+2025-06-18 11:49:30,769 - INFO - Successfully created Monday.com item ID: 9404726375
+2025-06-18 11:49:30,769 - INFO - Preparing image upload...
+2025-06-18 11:49:30,770 - INFO - Sending image upload request...
+2025-06-18 11:49:31,578 - INFO - Image upload response status: 200
+2025-06-18 11:49:31,578 - INFO - Image upload response text: {"errors":[{"message":"Variable $file of type File! was provided invalid value","locations":[{"line":2,"column":35}],"extensions":{"value":null,"problems":[{"path":[],"explanation":"Expected value to not be null"}]}}],"account_id":8417345}
+2025-06-18 11:49:31,579 - ERROR - Image upload failed: [{'message': 'Variable $file of type File! was provided invalid value', 'locations': [{'line': 2, 'column': 35}], 'extensions': {'value': None, 'problems': [{'path': [], 'explanation': 'Expected value to not be null'}]}}]
+2025-06-18 11:49:31,587 - ERROR - Failed to upload /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg to Monday.com
+2025-06-18 11:49:31,610 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-18 11:49:31,619 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-18 11:49:31,619 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-06-18 11:54:28,466 - INFO - ============================================================
+2025-06-18 11:54:28,466 - INFO - Starting equipment processing at 2025-06-18 11:54:28.466853
+2025-06-18 11:54:28,467 - INFO - ============================================================
+2025-06-18 11:54:28,467 - INFO - Checking Monday.com configuration:
+2025-06-18 11:54:28,467 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-18 11:54:28,467 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-18 11:54:28,541 - INFO - OpenAI API configured successfully
+2025-06-18 11:54:28,589 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:54:28,589 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:54:44,335 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-18 11:54:44,365 - INFO - Extracted data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU850 R3A 850 MHz radio unit', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}
+2025-06-18 11:54:44,398 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-18 11:54:53,634 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-18 11:54:53,639 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-18 11:54:53,671 - INFO - 
+Processing row 0:
+2025-06-18 11:54:53,671 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU850 R3A 850 MHz radio unit",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-18 11:54:53,683 - INFO - Exact match found: CEQ.28811
+2025-06-18 11:54:53,683 - INFO - 
+Attempting Monday.com upload with:
+2025-06-18 11:54:53,683 - INFO - Item data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU850 R3A 850 MHz radio unit', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg', 'match_method': 'exact_part_number', 'item_number': 'CEQ.28811'}
+2025-06-18 11:54:53,683 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:54:53,683 - INFO - ========================================
+2025-06-18 11:54:53,683 - INFO - Starting Monday.com upload process
+2025-06-18 11:54:53,683 - INFO - Item data: serial_number                                           TU8FB45524
+part_number                                             KRC11821/1
+asset_tag                                              ATT02208557
+description                  Ericsson FU850 R3A 850 MHz radio unit
+image_file       /Users/ramtinabolfazli/Documents/Work/Seniors ...
+match_method                                     exact_part_number
+item_number                                              CEQ.28811
+Name: 0, dtype: object
+2025-06-18 11:54:53,684 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 11:54:53,684 - INFO - Monday API Key: *****
+2025-06-18 11:54:53,684 - INFO - Board ID: 9389644156
+2025-06-18 11:54:53,684 - INFO - Prepared column values:
+2025-06-18 11:54:53,684 - INFO -   text_mks0f8z3: TU8FB45524
+2025-06-18 11:54:53,684 - INFO -   text_mks0ee0c: KRC11821/1
+2025-06-18 11:54:53,684 - INFO -   text_mks0hc83: ATT02208557
+2025-06-18 11:54:53,684 - INFO -   text_mks0345h: Ericsson FU850 R3A 850 MHz radio unit
+2025-06-18 11:54:53,684 - INFO - Item name: CEQ.28811
+2025-06-18 11:54:53,684 - INFO - Preparing GraphQL request:
+2025-06-18 11:54:53,684 - INFO - Query: 
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        
+2025-06-18 11:54:53,684 - INFO - Variables: {'boardId': '9389644156', 'itemName': 'CEQ.28811', 'columnValues': '{"text_mks0f8z3": "TU8FB45524", "text_mks0ee0c": "KRC11821/1", "text_mks0hc83": "ATT02208557", "text_mks0345h": "Ericsson FU850 R3A 850 MHz radio unit"}'}
+2025-06-18 11:54:53,684 - INFO - Sending request to Monday.com API...
+2025-06-18 11:54:54,828 - INFO - Received response. Status code: 200
+2025-06-18 11:54:54,828 - INFO - Response text: {"data":{"create_item":{"id":"9404783819"}},"extensions":{"request_id":"d7a76166-684e-9504-9fe0-0366113f36dc"}}
+2025-06-18 11:54:54,829 - INFO - Full response data: {'data': {'create_item': {'id': '9404783819'}}, 'extensions': {'request_id': 'd7a76166-684e-9504-9fe0-0366113f36dc'}}
+2025-06-18 11:54:54,829 - INFO - Successfully created Monday.com item ID: 9404783819
+2025-06-18 11:54:54,829 - INFO - Preparing image upload...
+2025-06-18 11:54:54,830 - INFO - Sending image upload request...
+2025-06-18 11:54:55,947 - INFO - Image upload response status: 200
+2025-06-18 11:54:55,947 - INFO - Image upload response text: {"errors":[{"message":"Variable $file of type File! was provided invalid value","locations":[{"line":2,"column":35}],"extensions":{"value":null,"problems":[{"path":[],"explanation":"Expected value to not be null"}]}}],"account_id":8417345}
+2025-06-18 11:54:55,948 - ERROR - Image upload failed: [{'message': 'Variable $file of type File! was provided invalid value', 'locations': [{'line': 2, 'column': 35}], 'extensions': {'value': None, 'problems': [{'path': [], 'explanation': 'Expected value to not be null'}]}}]
+2025-06-18 11:54:55,952 - ERROR - Failed to upload /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg to Monday.com
+2025-06-18 11:54:55,961 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-18 11:54:55,967 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-18 11:54:55,967 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-06-18 12:00:23,936 - INFO - ============================================================
+2025-06-18 12:00:23,936 - INFO - Starting equipment processing at 2025-06-18 12:00:23.936551
+2025-06-18 12:00:23,936 - INFO - ============================================================
+2025-06-18 12:00:23,936 - INFO - Checking Monday.com configuration:
+2025-06-18 12:00:23,936 - INFO - MONDAY_API_KEY exists: Yes
+2025-06-18 12:00:23,936 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-06-18 12:00:24,001 - INFO - OpenAI API configured successfully
+2025-06-18 12:00:24,051 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 12:00:24,051 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 12:00:35,396 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-06-18 12:00:35,411 - INFO - Extracted data: [{'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU850 R3A radio unit with TX A and RX A1/A2/A3 connectors', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg'}]
+2025-06-18 12:00:35,437 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    TU8FB45524  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-06-18 12:00:44,126 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-06-18 12:00:44,130 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-06-18 12:00:44,162 - INFO - 
+Processing row 0:
+2025-06-18 12:00:44,163 - INFO - {
+  "serial_number": "TU8FB45524",
+  "part_number": "KRC11821/1",
+  "asset_tag": "ATT02208557",
+  "description": "Ericsson FU850 R3A radio unit with TX A and RX A1/A2/A3 connectors",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg"
+}
+2025-06-18 12:00:44,172 - INFO - Exact match found: CEQ.28811
+2025-06-18 12:00:44,172 - INFO - 
+Attempting Monday.com upload with:
+2025-06-18 12:00:44,172 - INFO - Item data: {'serial_number': 'TU8FB45524', 'part_number': 'KRC11821/1', 'asset_tag': 'ATT02208557', 'description': 'Ericsson FU850 R3A radio unit with TX A and RX A1/A2/A3 connectors', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg', 'match_method': 'exact_part_number', 'item_number': 'CEQ.28811'}
+2025-06-18 12:00:44,173 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 12:00:44,173 - INFO - ========================================
+2025-06-18 12:00:44,173 - INFO - Starting Monday.com upload process
+2025-06-18 12:00:44,173 - INFO - Item data: serial_number                                           TU8FB45524
+part_number                                             KRC11821/1
+asset_tag                                              ATT02208557
+description      Ericsson FU850 R3A radio unit with TX A and RX...
+image_file       /Users/ramtinabolfazli/Documents/Work/Seniors ...
+match_method                                     exact_part_number
+item_number                                              CEQ.28811
+Name: 0, dtype: object
+2025-06-18 12:00:44,173 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg
+2025-06-18 12:00:44,173 - INFO - Monday API Key: *****
+2025-06-18 12:00:44,173 - INFO - Board ID: 9389644156
+2025-06-18 12:00:44,173 - INFO - Prepared column values:
+2025-06-18 12:00:44,173 - INFO -   text_mks0f8z3: TU8FB45524
+2025-06-18 12:00:44,173 - INFO -   text_mks0ee0c: KRC11821/1
+2025-06-18 12:00:44,173 - INFO -   text_mks0hc83: ATT02208557
+2025-06-18 12:00:44,173 - INFO -   text_mks0345h: Ericsson FU850 R3A radio unit with TX A and RX A1/A2/A3 connectors
+2025-06-18 12:00:44,173 - INFO - Item name: CEQ.28811
+2025-06-18 12:00:44,173 - INFO - Preparing GraphQL request:
+2025-06-18 12:00:44,173 - INFO - Query: 
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        
+2025-06-18 12:00:44,173 - INFO - Variables: {'boardId': '9389644156', 'itemName': 'CEQ.28811', 'columnValues': '{"text_mks0f8z3": "TU8FB45524", "text_mks0ee0c": "KRC11821/1", "text_mks0hc83": "ATT02208557", "text_mks0345h": "Ericsson FU850 R3A radio unit with TX A and RX A1/A2/A3 connectors"}'}
+2025-06-18 12:00:44,173 - INFO - Sending request to Monday.com API...
+2025-06-18 12:00:45,813 - INFO - Received response. Status code: 200
+2025-06-18 12:00:45,813 - INFO - Response text: {"data":{"create_item":{"id":"9404870185"}},"extensions":{"request_id":"1097a037-7191-90ea-9f98-94bbebd8fe71"}}
+2025-06-18 12:00:45,813 - INFO - Full response data: {'data': {'create_item': {'id': '9404870185'}}, 'extensions': {'request_id': '1097a037-7191-90ea-9f98-94bbebd8fe71'}}
+2025-06-18 12:00:45,814 - INFO - Successfully created Monday.com item ID: 9404870185
+2025-06-18 12:00:45,814 - INFO - Preparing image upload...
+2025-06-18 12:00:45,815 - INFO - Sending image upload request...
+2025-06-18 12:00:49,117 - INFO - Image upload response status: 200
+2025-06-18 12:00:49,117 - INFO - Image upload response text: {"data":{"add_file_to_column":{"id":"2213847456"}},"account_id":8417345}
+2025-06-18 12:00:49,118 - INFO - Image successfully uploaded to Monday.com
+2025-06-18 12:00:49,124 - INFO - Successfully uploaded /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/uploads/photos/10102017/IMG-20250611-WA0041.jpg to Monday.com
+2025-06-18 12:00:49,145 - INFO - 
+Final matched data:
+  serial_number part_number  ... item_number From location
+0    TU8FB45524  KRC11821/1  ...   CEQ.28811      10102017
+
+[1 rows x 8 columns]
+2025-06-18 12:00:49,153 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
+2025-06-18 12:00:49,153 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output

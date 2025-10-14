@@ -15,8 +15,12 @@ from openai import OpenAI
 from dotenv import load_dotenv
 load_dotenv()  # This loads the .env file
 import base64
+import requests
+import imagehash
+from collections import defaultdict# Configure logging
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 
-# Configure logging
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -66,10 +70,11 @@ You are an expert in structured data extraction from technical images. Extract r
 ### Task
 First, review the **clear examples** provided to learn the formatting, character shapes, and data layout patterns. Then, use that understanding to extract structured data from the less-clear target image.
 After learning from clear images, you can iterate through the unclear ones with better accuracy.
+Each image, may include serveral parts, make sure to include all the following information from all different parts per image.
 
-- **serial_number**: A unique identifier often prefixed with (S), may appear near a barcode.
-- **part_number**: Identifies a specific item. Items of the same model share the same part number. Often prefixed with (1P).
-- **asset_tag**: Always starts with 'ATT'.
+- **serial_number**: A unique identifier often prefixed with (S) or Serial:, may appear near a barcode. It may start with BH, AB, CC, A, B, TU, QS.
+- **part_number**: Identifies a specific item. Items of the same model share the same part number. Often prefixed with (1P) or start with KRC, BML, 11/COH, BMG, BGM, JAHH. They have at least 6 chars (letters or digits).
+- **asset_tag**: Always starts with 'ATT' or 'C'. The tag's color is orange always.
 - **description**: A concise description of the item, including:
   - Type (e.g., antenna, radio, rectifier, router, etc.)
   - Key specifications (if available)
@@ -130,9 +135,30 @@ output:
         return None
 
 def clean_json_response(response_text):
-    """Clean OpenAI response JSON"""
+    """Clean OpenAI response JSON and remove spaces from part/serial numbers"""
     try:
+        # Remove JSON code block markers
         cleaned = re.sub(r'^```json|```$', '', response_text, flags=re.MULTILINE).strip()
+        
+        # Parse JSON
+        data = json.loads(cleaned)
+        
+        # Clean part_number and serial_number (remove all whitespace)
+        if isinstance(data, dict):
+            if 'part_number' in data and data['part_number']:
+                data['part_number'] = re.sub(r'\s+', '', str(data['part_number']))
+            if 'serial_number' in data and data['serial_number']:
+                data['serial_number'] = re.sub(r'\s+', '', str(data['serial_number']))
+            return json.dumps(data)
+        
+        elif isinstance(data, list):
+            for item in data:
+                if 'part_number' in item and item['part_number']:
+                    item['part_number'] = re.sub(r'\s+', '', str(item['part_number']))
+                if 'serial_number' in item and item['serial_number']:
+                    item['serial_number'] = re.sub(r'\s+', '', str(item['serial_number']))
+            return json.dumps(data)
+        
         return cleaned
     except Exception as e:
         logger.error(f"Error cleaning JSON response: {str(e)}")
@@ -140,7 +166,7 @@ def clean_json_response(response_text):
 
 def ai_description_matcher(extracted_desc, df_manufacturers, client):
     """You are a technical equipment expert. Your task is to identify the best matching item number from a manufacturer file based on the extracted description.
-
+        If this function is used, include a * infront of the item number extracted. 
             The match should prioritize:
             - Similar part or model numbers or item description
             - Functional and keyword similarity (e.g., radio, antenna, rectifier)
@@ -218,12 +244,190 @@ def save_results(df, output_path):
         logger.info(f"Results saved to: {output_path}")
     except Exception as e:
         raise EquipmentProcessorError(f"Failed to save results: {str(e)}")
+    
+    
+    
+# Monday Connection
+def upload_to_monday(item_data, image_path):
+    """Upload item data and image to Monday.com"""
+    try:
+        logger.info("="*40)
+        logger.info("Starting Monday.com upload process")
+        logger.info(f"Item data: {item_data}")
+        logger.info(f"Image path: {image_path}")
+        
+        monday_api_key = os.getenv("MONDAY_API_KEY")
+        board_id = os.getenv("MONDAY_BOARD_ID")
+        group_id = "topics"  # Change this to your board's group name
+        
+        logger.info(f"Monday API Key: {'*****' if monday_api_key else 'Not found'}")
+        logger.info(f"Board ID: {board_id}")
+        
+        if not monday_api_key or not board_id:
+            logger.error("Monday.com credentials not configured")
+            return False
+
+        headers = {
+            "Authorization": monday_api_key,
+            "Content-Type": "application/json"
+        }
+
+        # Get your actual column IDs from Monday's API playground
+        column_values = {
+            "text_mks0f8z3": item_data.get("serial_number", ""),  # Serial Number
+            "text_mks0ee0c": item_data.get("part_number", ""),   # Part Number
+            "text_mks0hc83": item_data.get("asset_tag", ""),     # Asset Tag
+            "text_mks0345h": item_data.get("description", "")    # Description
+        }
+
+        # Clean None values
+        column_values = {k: (v if v is not None else "") for k, v in column_values.items()}
+        item_name = item_data.get("item_number", "Unnamed Equipment")[:255]
+        
+        logger.info("Prepared column values:")
+        for k, v in column_values.items():
+            logger.info(f"  {k}: {v}")
+        logger.info(f"Item name: {item_name}")
+
+        query = """
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        """
+        
+        variables = {
+            "boardId": board_id,
+            "itemName": item_name,
+            "columnValues": json.dumps(column_values)
+        }
+
+        logger.info("Preparing GraphQL request:")
+        logger.info(f"Query: {query}")
+        logger.info(f"Variables: {variables}")
+
+        # First request - create item
+        logger.info("Sending request to Monday.com API...")
+        response = requests.post(
+            "https://api.monday.com/v2",
+            json={"query": query, "variables": variables},
+            headers=headers
+        )
+        
+        logger.info(f"Received response. Status code: {response.status_code}")
+        logger.info(f"Response text: {response.text}")
+        
+        try:
+            response.raise_for_status()
+            response_data = response.json()
+            logger.info(f"Full response data: {response_data}")
+            
+            if "errors" in response_data:
+                logger.error(f"Monday.com API error: {response_data['errors']}")
+                return False
+
+            if "data" not in response_data or "create_item" not in response_data["data"]:
+                logger.error("Unexpected response structure from Monday.com")
+                logger.error(f"Full response: {response_data}")
+                return False
+
+            item_id = response_data["data"]["create_item"]["id"]
+            logger.info(f"Successfully created Monday.com item ID: {item_id}")
+
+        except requests.exceptions.HTTPError as http_err:
+            logger.error(f"HTTP error occurred: {http_err}")
+            logger.error(f"Response content: {response.text}")
+            return False
+        except ValueError as json_err:
+            logger.error(f"JSON decode error: {json_err}")
+            logger.error(f"Response content: {response.text}")
+            return False
+        except Exception as e:
+            logger.error(f"Unexpected error processing response: {e}")
+            logger.error(f"Response content: {response.text}")
+            return False
+
+        # Replace your image upload code with this version
+        logger.info("Preparing image upload...")
+        try:
+            if not os.path.exists(image_path):
+                logger.error(f"Image file not found: {image_path}")
+                return False
+
+            # Read the file content
+            with open(image_path, "rb") as img_file:
+                file_content = img_file.read()
+
+            # Prepare the multipart form data with MAP field
+            m = MultipartEncoder(
+                fields={
+                    'query': """
+                        mutation ($file: File!, $itemId: ID!) {
+                            add_file_to_column(
+                                file: $file,
+                                item_id: $itemId,
+                                column_id: "file_mks0z9er"
+                            ) {
+                                id
+                            }
+                        }
+                    """,
+                    'variables': json.dumps({"itemId": item_id}),
+                    'map': json.dumps({"file": ["variables.file"]}),  # THIS IS CRITICAL
+                    'file': (os.path.basename(image_path), file_content, 'image/jpeg')
+                }
+            )
+
+            headers = {
+                "Authorization": monday_api_key,
+                "Content-Type": m.content_type
+            }
+
+            logger.info("Sending image upload request...")
+            upload_response = requests.post(
+                "https://api.monday.com/v2/file",
+                headers=headers,
+                data=m
+            )
+
+            logger.info(f"Image upload response status: {upload_response.status_code}")
+            logger.info(f"Image upload response text: {upload_response.text}")
+
+            upload_response.raise_for_status()
+            upload_data = upload_response.json()
+
+            if "errors" in upload_data:
+                logger.error(f"Image upload failed: {upload_data['errors']}")
+                return False
+
+            logger.info("Image successfully uploaded to Monday.com")
+            return True
+
+        except Exception as upload_err:
+            logger.error(f"Image upload failed: {str(upload_err)}")
+            logger.error(traceback.format_exc())
+            return False
+
+    except Exception as e:
+        logger.error(f"Monday.com upload failed with unexpected error: {str(e)}")
+        logger.error(traceback.format_exc())
+        return False
 
 def main():
     try:
         logger.info("=" * 60)
         logger.info(f"Starting equipment processing at {datetime.now()}")
         logger.info("=" * 60)
+
+        # Add Monday.com configuration check
+        logger.info("Checking Monday.com configuration:")
+        logger.info(f"MONDAY_API_KEY exists: {'Yes' if os.getenv('MONDAY_API_KEY') else 'No'}")
+        logger.info(f"MONDAY_BOARD_ID: {os.getenv('MONDAY_BOARD_ID')}")
 
         parser = argparse.ArgumentParser()
         parser.add_argument('--location', required=True)
@@ -233,16 +437,35 @@ def main():
 
         client = configure_openai()
 
+        # Image processing
         photo_dir = os.path.join(args.uploads_root, 'photos', args.location)
         image_files = glob(os.path.join(photo_dir, '*.jpg')) + \
-                      glob(os.path.join(photo_dir, '*.jpeg')) + \
-                      glob(os.path.join(photo_dir, '*.png'))
+                     glob(os.path.join(photo_dir, '*.jpeg')) + \
+                     glob(os.path.join(photo_dir, '*.png'))
 
         if not image_files:
             raise EquipmentProcessorError(f"No images found in {photo_dir}")
 
+        # Duplicate image detection
+        hashes = defaultdict(list)
+        for image_path in image_files:
+            try:
+                with Image.open(image_path) as img:
+                    img_hash = imagehash.average_hash(img)
+                    hashes[str(img_hash)].append(image_path)
+            except Exception as e:
+                logger.warning(f"Failed to hash image {image_path}: {e}")
+
+        for h, paths in hashes.items():
+            if len(paths) > 1:
+                logger.warning(f"Duplicate image group found (hash {h}):")
+                for p in paths:
+                    logger.warning(f"  - {p}")
+
+        # Data extraction
         results = []
         for image_file in image_files:
+            logger.info(f"\nProcessing image: {image_file}")
             response = extract_from_image(image_file, client)
             if response:
                 cleaned = clean_json_response(response)
@@ -256,6 +479,7 @@ def main():
                             for item in data:
                                 item['image_file'] = image_file
                                 results.append(item)
+                        logger.info(f"Extracted data: {data}")
                     except json.JSONDecodeError as e:
                         logger.error(f"JSON decode error in {image_file}: {e}")
 
@@ -263,49 +487,76 @@ def main():
             raise EquipmentProcessorError("No valid data extracted from images")
 
         df_extracted = pd.DataFrame(results)
+        logger.info(f"\nExtracted data summary:\n{df_extracted.head()}")
+
+        # Manufacturer data loading
         manufacturer_dir = os.path.join(args.uploads_root, 'manufacturer', args.location)
-        manufacturer_files = glob(os.path.join(manufacturer_dir, '*.xlsx')) + glob(os.path.join(manufacturer_dir, '*.xls'))
+        manufacturer_files = glob(os.path.join(manufacturer_dir, '*.xlsx')) + \
+                           glob(os.path.join(manufacturer_dir, '*.xls'))
 
         if not manufacturer_files:
             raise EquipmentProcessorError(f"No manufacturer files found in {manufacturer_dir}")
 
         df_manufacturers = load_manufacturer_data(manufacturer_files[0])
+        logger.info(f"\nManufacturer data loaded. Columns: {df_manufacturers.columns.tolist()}")
+        logger.info(f"Sample manufacturer data:\n{df_manufacturers.head()}")
 
-        # Normalize values
+        # Data normalization
         df_extracted['part_number'] = df_extracted['part_number'].astype(str).str.upper().str.strip()
         df_manufacturers['Manufacturer Part Number'] = df_manufacturers['Manufacturer Part Number'].astype(str).str.upper().str.strip()
 
+        # Matching and Monday upload
         matched_data = []
-        for _, row in df_extracted.iterrows():
+        for idx, row in df_extracted.iterrows():
+            logger.info(f"\nProcessing row {idx}:")
+            logger.info(json.dumps(row.to_dict(), indent=2))
+            
             matched = row.copy()
+            matched['match_method'] = None
+            matched['item_number'] = None
 
             # Stage 1: Exact part number match
             exact = df_manufacturers[df_manufacturers['Manufacturer Part Number'] == row['part_number']]
             if not exact.empty:
                 matched['item_number'] = exact.iloc[0]['Item Number']
                 matched['match_method'] = 'exact_part_number'
+                logger.info(f"Exact match found: {matched['item_number']}")
                 matched_data.append(matched)
+                # Monday.com upload attempt
+                logger.info("\nAttempting Monday.com upload with:")
+                logger.info(f"Item data: {matched.to_dict()}")
+                logger.info(f"Image path: {row['image_file']}")
+                        
+                if upload_to_monday(matched, row['image_file']):
+                    logger.info(f"Successfully uploaded {row['image_file']} to Monday.com")
+                else:
+                    logger.error(f"Failed to upload {row['image_file']} to Monday.com")
                 continue
 
-            # Stage 2: Try to find in description without API call
+            # Stage 2: Description matching
             if pd.notna(row.get('description')):
-                # First try exact matches in manufacturer descriptions
+                logger.info("Attempting description matching...")
+                # First try exact matches
                 for _, mfr_row in df_manufacturers.iterrows():
-                    if pd.notna(mfr_row['Item Description']) and str(mfr_row['Item Description']).lower() in row['description'].lower():
+                    if pd.notna(mfr_row['Item Description']) and \
+                       str(mfr_row['Item Description']).lower() in row['description'].lower():
                         matched['item_number'] = mfr_row['Item Number']
                         matched['match_method'] = 'exact_description_match'
+                        logger.info(f"Description match found: {matched['item_number']}")
                         matched_data.append(matched)
                         break
                 else:
-                    # Only use API if no matches found
+                    # AI matching if no exact matches
                     ai_match = ai_description_matcher(row['description'], df_manufacturers, client)
                     if ai_match and ai_match in df_manufacturers['Item Number'].values:
                         matched['item_number'] = ai_match
                         matched['match_method'] = 'ai_description_match'
+                        logger.info(f"AI description match found: {matched['item_number']}")
                         matched_data.append(matched)
                         continue
 
-            # Stage 3: Fuzzy match on part number
+            # Stage 3: Fuzzy matching
+            logger.info("Attempting fuzzy matching...")
             close_matches = get_close_matches(
                 row['part_number'],
                 df_manufacturers['Manufacturer Part Number'].unique(),
@@ -317,16 +568,20 @@ def main():
                     df_manufacturers['Manufacturer Part Number'] == close_matches[0]
                 ].iloc[0]['Item Number']
                 matched['match_method'] = 'fuzzy_part_number'
+                logger.info(f"Fuzzy match found: {matched['item_number']}")
             else:
-                matched['item_number'] = None
                 matched['match_method'] = 'no_match'
+                logger.warning("No match found for this item")
+
 
             matched_data.append(matched)
+            logger.info("-" * 40)  # Visual separator
 
+        # Final output preparation
         df_final = pd.DataFrame(matched_data)
         df_final['From location'] = args.location
+        logger.info(f"\nFinal matched data:\n{df_final}")
 
-        # Prepare output
         output_columns = {
             'asset_tag': 'Asset Tag #',
             'serial_number': 'Serial Number',
@@ -337,7 +592,8 @@ def main():
             'quality': 'Quality',
             'werf': 'WERF#',
             'wrt': 'WRT#',
-            'toe_tag': 'Toe Tag #'
+            'toe_tag': 'Toe Tag #',
+            'match_method': 'Match Method'
         }
 
         df_output = df_final[[k for k in output_columns if k in df_final.columns]]
@@ -347,7 +603,9 @@ def main():
         df_output['WERF#'] = ' '
         df_output['WRT#'] = ' '
         df_output['Toe Tag #'] = ' '
+
         save_results(df_output, args.output)
+        logger.info(f"\nResults saved to: {args.output}")
 
     except EquipmentProcessorError as e:
         logger.error(f"Equipment Processor Error: {str(e)}")

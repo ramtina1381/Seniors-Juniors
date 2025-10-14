@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "5002:5002"
+    environment:
+      - NODE_ENV=production
+      - PORT=5002
+      - CORS_ORIGIN=*
+      - UPLOADS_DIR=/app/uploads
+      - OUTPUT_DIR=/app/output
+      - TEMP_DIR=/app/temp
+      - LOGS_DIR=/app/logs
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MONDAY_API_KEY=${MONDAY_API_KEY}
+      - MONDAY_BOARD_ID=${MONDAY_BOARD_ID}
+    volumes:
+      # Persist uploads and outputs
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5002/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a reverse proxy (nginx)
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - app
+    restart: unless-stopped
+    profiles:
+      - production

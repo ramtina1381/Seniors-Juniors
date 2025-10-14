@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import JHAFileUpload from '../components/JHAFileUpload';
 import ProcessButton from '../components/ProcessButton';
+import '../styles/JHA.css';
+
 
 const JHA = () => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -68,19 +70,18 @@ const JHA = () => {
     <div className="jha-page-container">
       <h1>JHA Document Upload</h1>
       <p>Please upload the Job Hazard Analysis PDF files and the corresponding manufacturer Excel file.</p>
-
+     <div className="card">
       <JHAFileUpload
         onUploadComplete={handleUploadComplete}
         location={location}
         setLocation={setLocation}
       />
-
       <ProcessButton 
         onClick={handleProcess} 
         disabled={!uploadedFiles.length || !location || isProcessing}
         loading={isProcessing}
       />
-
+     </div>
       {processMessage && (
         <div className="process-message">
           <p>{processMessage}</p>

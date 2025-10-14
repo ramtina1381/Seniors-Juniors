@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server/app-vercel.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/app-vercel.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "client/build/$1"
+    }
+  ],
+  "functions": {
+    "server/app-vercel.js": {
+      "maxDuration": 300
+    }
+  },
+  "env": {
+    "NODE_ENV": "production",
+    "UPLOADS_DIR": "/tmp/uploads",
+    "OUTPUT_DIR": "/tmp/output",
+    "TEMP_DIR": "/tmp",
+    "LOGS_DIR": "/tmp/logs"
+  }
+}

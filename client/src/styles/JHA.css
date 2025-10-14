@@ -1,0 +1,94 @@
+/* JHA.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  margin: 0;
+  padding: 0;
+}
+
+.jha-page-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 28px;
+  text-align: center;
+  color: #1f2937;
+  margin-bottom: 20px;
+}
+
+p {
+  text-align: center;
+  color: #4b5563;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.card {
+  background-color: #f3f4f6;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #e5e7eb;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.process-message {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #10b981;
+  border-radius: 8px;
+}
+
+.uploaded-summary {
+  margin-top: 30px;
+}
+
+.uploaded-summary h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.uploaded-summary ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #374151;
+}
+
+@media (max-width: 768px) {
+  .jha-page-container {
+    padding: 20px;
+  }
+}

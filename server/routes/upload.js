@@ -1,14 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 const fs = require('fs');
-
-// Base upload directories
-const UPLOAD_BASE_DIR = path.join(__dirname, '../../uploads');
-
-// Ensure base directory exists
-if (!fs.existsSync(UPLOAD_BASE_DIR)) {
-  fs.mkdirSync(UPLOAD_BASE_DIR, { recursive: true });
-}
+const pathConfig = require('../config/paths');
 
 // ✅ Modified Photo Upload Route - now uses URL parameter for location
 router.post('/photos/:location', (req, res) => {
@@ -22,9 +15,9 @@ router.post('/photos/:location', (req, res) => {
 
   const photos = Array.isArray(req.files.photos) ? req.files.photos : [req.files.photos];
 
-  // Create location-specific directory
-  const locationDir = path.join(UPLOAD_BASE_DIR, 'photos', location);
-  if (!fs.existsSync(locationDir)) fs.mkdirSync(locationDir, { recursive: true });
+  // Create location-specific directory using pathConfig
+  pathConfig.ensureLocationDirs(location);
+  const locationDir = pathConfig.getPhotosDir(location);
 
   const uploaded = [];
   const skipped = [];
@@ -80,9 +73,9 @@ router.post('/manufacturer/:location', (req, res) => {
     return res.status(400).send('Only Excel files are allowed');
   }
 
-  // Create location-specific manufacturer directory
-  const manufacturerDir = path.join(UPLOAD_BASE_DIR, 'manufacturer', location);
-  if (!fs.existsSync(manufacturerDir)) fs.mkdirSync(manufacturerDir, { recursive: true });
+  // Create location-specific manufacturer directory using pathConfig
+  pathConfig.ensureLocationDirs(location);
+  const manufacturerDir = pathConfig.getManufacturerDir(location);
 
   // Save with location-specific filename
   const filename = `manufacturer_file_${location}${ext}`;

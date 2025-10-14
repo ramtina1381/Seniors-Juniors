@@ -13,10 +13,11 @@ import xlwings as xw
 import base64
 from PyPDF2.generic import NameObject
 from pdf2image import convert_from_path
+import pytesseract as Output
 import pytesseract
 from PIL import Image
-
-
+import cv2
+import numpy as np
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description="Process JHA PDF files.")
@@ -32,7 +33,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Constants
 UPLOADS_ROOT = args.uploads_root
-LOCATION = args.location
+LOCATION = arg2s.location
 PDF_DIR = os.path.join(UPLOADS_ROOT, 'jha', LOCATION, 'pdfs')
 EXCEL_TEMPLATE = os.path.join(UPLOADS_ROOT, 'jha', LOCATION, 'excel')
 OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'output', 'jha', LOCATION)
@@ -40,52 +41,94 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 OUTPUT_EXCEL = os.path.join(OUTPUT_DIR, "jha_processed.xlsx")
 TIMEZONE = pytz.timezone('America/New_York')
 
-def extract_text_with_checkboxes(pdf_path):
-    from PyPDF2.errors import PdfReadError
-
-    checkbox_state = None
+def extract_text_with_checkbox(pdf_path):
     combined_text = ""
+    checkbox_detected = False
+
+    checkmark_patterns = [
+        r"[\[|{(]?\s*[✔✓☑Xx■]\s*[\]|})]?\s*WORKING AT HEIGHTS",  # handles most visual marks
+        r"WORKING AT HEIGHTS\s*[:\-]?\s*(✔|✓|☑|X|x|■)",            # handles suffix cases
+    ]
 
     try:
         with open(pdf_path, 'rb') as file:
             reader = PdfReader(file)
-            for page in reader.pages:
+            for i, page in enumerate(reader.pages):
                 page_text = page.extract_text()
                 if page_text:
                     combined_text += page_text
 
-                # Check for digital checkboxes
-                if "/Annots" in page:
-                    for annot_ref in page["/Annots"]:
-                        annot = annot_ref.get_object()
-                        if annot.get("/Subtype") == "/Widget" and annot.get("/FT") == "/Btn":
-                            field_name = annot.get("/T")
-                            if field_name and "height" in str(field_name).lower():
-                                checkbox_state = annot.get("/V") == "/Yes"
-                                print(f"[✔] Digital checkbox found: {checkbox_state}")
-                                return combined_text, checkbox_state
-    except PdfReadError as e:
-        print(f"PDF Read error: {e}")
+                    # Normalize whitespace for accurate regex matching
+                    normalized = ' '.join(page_text.split()).upper()
+                    
+                    for pattern in checkmark_patterns:
+                        if re.search(pattern, normalized):
+                            print(f"[✔] Found checkbox mark on page {i+1} matching pattern: {pattern}")
+                            checkbox_detected = True
+                            break
+                if checkbox_detected:
+                    break
 
-    # OCR fallback
-    print("[ℹ️] Falling back to OCR for checkbox detection...")
-    images = convert_from_path(pdf_path, dpi=300)
-    for img in images:
-        ocr_text = pytesseract.image_to_string(img)
-        combined_text += "\n" + ocr_text
+        return combined_text
 
-        if "WORKING AT HEIGHTS" in ocr_text.upper():
-            context = ocr_text.upper().split("WORKING AT HEIGHTS", 1)[-1][:100]
-            if any(x in context for x in ['☑', '[X]', '✓', '✔', '[√]', '[V]', 'YES']):
-                checkbox_state = True
-                print("[✔] OCR: WORKING AT HEIGHTS is CHECKED.")
-                break
-            elif any(x in context for x in ['☐', '[ ]', 'NO', 'UNCHECKED']):
-                checkbox_state = False
-                print("[✘] OCR: WORKING AT HEIGHTS is NOT checked.")
-                break
+    except Exception as e:
+        print(f"[✘] Failed to process PDF: {e}")
+        return "", False
+    
+def detect_working_at_heights_checked(pdf_path):
+    """Optimized for right-side checkboxes with visual debugging"""
+    try:
+        # Convert PDF to high-res image (adjust DPI as needed)
+        images = convert_from_path(pdf_path, dpi=300)
+        
+        for page_num, image in enumerate(images):
+            # Convert to OpenCV format and preprocess
+            img = cv2.cvtColor(np.array(image), cv2.COLOR_RGB2BGR)
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+            
+            # Find "WORKING AT HEIGHTS" text position
+            ocr_data = pytesseract.image_to_data(gray, output_type=pytesseract.Output.DICT)
+            
+            for i, text in enumerate(ocr_data['text']):
+                if "WORKING AT HEIGHTS" in text.upper():
+                    x, y, w, h = ocr_data['left'][i], ocr_data['top'][i], ocr_data['width'][i], ocr_data['height'][i]
+                    
+                    # Adjusted for right-side checkbox (modify these values as needed)
+                    checkbox_x1 = x + w + 10  # Start 10px right of text
+                    checkbox_x2 = checkbox_x1 + 40  # Checkbox width ~40px
+                    checkbox_y1 = y - 5       # Slightly above text baseline
+                    checkbox_y2 = y + h + 5   # Slightly below text height
+                    
+                    # Extract checkbox region
+                    checkbox_roi = thresh[checkbox_y1:checkbox_y2, checkbox_x1:checkbox_x2]
+                    
+                    # Save visualization for debugging
+                    debug_img = img.copy()
+                    cv2.rectangle(debug_img, (checkbox_x1, checkbox_y1), (checkbox_x2, checkbox_y2), (0, 255, 0), 2)
+                    cv2.imwrite(f"debug_page{page_num+1}.jpg", debug_img)
+                    print(f"Debug image saved: debug_page{page_num+1}.jpg")
+                    
+                    # Analyze checkbox content
+                    filled_pixels = cv2.countNonZero(checkbox_roi)
+                    total_pixels = checkbox_roi.size
+                    fill_percentage = filled_pixels / total_pixels
+                    
+                    # Determine checkbox state (adjust threshold as needed)
+                    if fill_percentage > 0.25:  # 25% filled = checked
+                        print("[✅] Checkbox DETECTED AS CHECKED")
+                        return True
+                    else:
+                        print("[❌] Checkbox DETECTED AS UNCHECKED")
+                        return False
+                    
+        print("[⚠️] 'WORKING AT HEIGHTS' text not found")
+        return False
+        
+    except Exception as e:
+        print(f"[🔥] Processing error: {str(e)}")
+        return False
 
-    return combined_text, checkbox_state
 
 def parse_pdf_with_ai(pdf_text, checkbox_state=None):
     """Enhanced AI parser with checkbox awareness and refined name extraction"""
@@ -174,7 +217,9 @@ def process_pdf_files():
         pdf_path = os.path.join(PDF_DIR, pdf_file)
 
         # Extract text and checkbox
-        pdf_text, checkbox_state = extract_text_with_checkboxes(pdf_path)
+        pdf_text= extract_text_with_checkbox(pdf_path)
+        checkbox_state = detect_working_at_heights_checked(pdf_path)
+
 
         # Save extracted text
         text_path = os.path.join(text_output_dir, f"{date_str}.txt")
