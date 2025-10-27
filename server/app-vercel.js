@@ -9,7 +9,7 @@ const app = express();
 
 // Vercel-specific configuration
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || 'https://your-app.vercel.app',
+  origin: process.env.CORS_ORIGIN || 'https://seniors-juniors-client.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
