@@ -8,7 +8,7 @@ const API_CONFIG = {
   
   // Production (Vercel)
   production: {
-    baseURL: 'https://seniors-juniors-server.vercel.app/', // Replace with your actual backend URL
+    baseURL: 'https://seniors-juniors-server.vercel.app', // Replace with your actual backend URL
     apiPrefix: '/api'
   }
 };
