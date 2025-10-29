@@ -133,7 +133,9 @@ class PathConfig {
 
     // Python script paths
     getPythonScriptsDir() {
-        return path.join(this.rootDir, 'server', 'python');
+        // Root directory for this config resolves to the server folder
+        // so the python scripts live under '<server>/python'
+        return path.join(this.rootDir, 'python');
     }
 
     getEquipmentProcessorScript() {

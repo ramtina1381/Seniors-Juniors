@@ -1922,3 +1922,98 @@ Final matched data:
 2025-06-18 12:00:49,153 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output/equipment_inventory.csv
 2025-06-18 12:00:49,153 - INFO - 
 Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/output
+2025-10-28 22:25:06,852 - INFO - ============================================================
+2025-10-28 22:25:06,854 - INFO - Starting equipment processing at 2025-10-28 22:25:06.853899
+2025-10-28 22:25:06,854 - INFO - ============================================================
+2025-10-28 22:25:06,854 - INFO - Checking Monday.com configuration:
+2025-10-28 22:25:06,854 - INFO - MONDAY_API_KEY exists: Yes
+2025-10-28 22:25:06,854 - INFO - MONDAY_BOARD_ID: 9389644156
+2025-10-28 22:25:07,063 - INFO - OpenAI API configured successfully
+2025-10-28 22:25:07,259 - INFO - 
+Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg
+2025-10-28 22:25:07,259 - INFO - Processing image: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg
+2025-10-28 22:25:21,611 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-10-28 22:25:21,637 - INFO - Extracted data: [{'serial_number': 'BH53797833', 'part_number': 'BML353132/2', 'asset_tag': 'C03181858', 'description': 'Ericsson AC power supply module (PSU-AC) model BML 353 132/2, revision R2A', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg'}]
+2025-10-28 22:25:21,680 - INFO - 
+Extracted data summary:
+  serial_number  ...                                         image_file
+0    BH53797833  ...  /Users/ramtinabolfazli/Documents/Work/Seniors ...
+
+[1 rows x 5 columns]
+2025-10-28 22:25:35,929 - INFO - 
+Manufacturer data loaded. Columns: ['Item Number', 'Item Description', 'Status Code', 'OEM', 'Manufacturer Part Number', 'Item Number .1']
+2025-10-28 22:25:35,934 - INFO - Sample manufacturer data:
+  Item Number  ... Item Number .1
+0   ANT.00001  ...      ANT.00001
+1   ANT.00005  ...      ANT.00005
+2   ANT.00010  ...      ANT.00010
+3   ANT.00015  ...      ANT.00015
+4   ANT.00020  ...      ANT.00020
+
+[5 rows x 6 columns]
+2025-10-28 22:25:35,975 - INFO - 
+Processing row 0:
+2025-10-28 22:25:35,975 - INFO - {
+  "serial_number": "BH53797833",
+  "part_number": "BML353132/2",
+  "asset_tag": "C03181858",
+  "description": "Ericsson AC power supply module (PSU-AC) model BML 353 132/2, revision R2A",
+  "image_file": "/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg"
+}
+2025-10-28 22:25:35,988 - INFO - Exact match found: CEQ.25839
+2025-10-28 22:25:35,988 - INFO - 
+Attempting Monday.com upload with:
+2025-10-28 22:25:35,989 - INFO - Item data: {'serial_number': 'BH53797833', 'part_number': 'BML353132/2', 'asset_tag': 'C03181858', 'description': 'Ericsson AC power supply module (PSU-AC) model BML 353 132/2, revision R2A', 'image_file': '/Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg', 'match_method': 'exact_part_number', 'item_number': 'CEQ.25839'}
+2025-10-28 22:25:35,989 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg
+2025-10-28 22:25:35,989 - INFO - ========================================
+2025-10-28 22:25:35,989 - INFO - Starting Monday.com upload process
+2025-10-28 22:25:35,989 - INFO - Item data: serial_number                                           BH53797833
+part_number                                            BML353132/2
+asset_tag                                                C03181858
+description      Ericsson AC power supply module (PSU-AC) model...
+image_file       /Users/ramtinabolfazli/Documents/Work/Seniors ...
+match_method                                     exact_part_number
+item_number                                              CEQ.25839
+Name: 0, dtype: object
+2025-10-28 22:25:35,989 - INFO - Image path: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg
+2025-10-28 22:25:35,989 - INFO - Monday API Key: *****
+2025-10-28 22:25:35,989 - INFO - Board ID: 9389644156
+2025-10-28 22:25:35,989 - INFO - Prepared column values:
+2025-10-28 22:25:35,989 - INFO -   text_mks0f8z3: BH53797833
+2025-10-28 22:25:35,989 - INFO -   text_mks0ee0c: BML353132/2
+2025-10-28 22:25:35,989 - INFO -   text_mks0hc83: C03181858
+2025-10-28 22:25:35,989 - INFO -   text_mks0345h: Ericsson AC power supply module (PSU-AC) model BML 353 132/2, revision R2A
+2025-10-28 22:25:35,989 - INFO - Item name: CEQ.25839
+2025-10-28 22:25:35,989 - INFO - Preparing GraphQL request:
+2025-10-28 22:25:35,989 - INFO - Query: 
+        mutation ($boardId: ID!, $itemName: String!, $columnValues: JSON!) {
+            create_item(
+                board_id: $boardId,
+                item_name: $itemName,
+                column_values: $columnValues
+            ) {
+                id
+            }
+        }
+        
+2025-10-28 22:25:35,990 - INFO - Variables: {'boardId': '9389644156', 'itemName': 'CEQ.25839', 'columnValues': '{"text_mks0f8z3": "BH53797833", "text_mks0ee0c": "BML353132/2", "text_mks0hc83": "C03181858", "text_mks0345h": "Ericsson AC power supply module (PSU-AC) model BML 353 132/2, revision R2A"}'}
+2025-10-28 22:25:35,990 - INFO - Sending request to Monday.com API...
+2025-10-28 22:25:37,766 - INFO - Received response. Status code: 200
+2025-10-28 22:25:37,767 - INFO - Response text: {"data":{"create_item":{"id":"18294424987"}},"extensions":{"request_id":"2ff7ca24-b43a-9677-810a-2484f73aacbc"}}
+2025-10-28 22:25:37,767 - INFO - Full response data: {'data': {'create_item': {'id': '18294424987'}}, 'extensions': {'request_id': '2ff7ca24-b43a-9677-810a-2484f73aacbc'}}
+2025-10-28 22:25:37,768 - INFO - Successfully created Monday.com item ID: 18294424987
+2025-10-28 22:25:37,768 - INFO - Preparing image upload...
+2025-10-28 22:25:37,769 - INFO - Sending image upload request...
+2025-10-28 22:25:41,353 - INFO - Image upload response status: 200
+2025-10-28 22:25:41,354 - INFO - Image upload response text: {"data":{"add_file_to_column":{"id":"2516994793"}},"account_id":8417345}
+2025-10-28 22:25:41,354 - INFO - Image successfully uploaded to Monday.com
+2025-10-28 22:25:41,365 - INFO - Successfully uploaded /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/uploads/photos/12345/IMG-20250611-WA0030.jpg to Monday.com
+2025-10-28 22:25:41,382 - INFO - 
+Final matched data:
+  serial_number  part_number  ... item_number From location
+0    BH53797833  BML353132/2  ...   CEQ.25839         12345
+
+[1 rows x 8 columns]
+2025-10-28 22:25:41,396 - INFO - Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/output/equipment_inventory.csv
+2025-10-28 22:25:41,396 - INFO - 
+Results saved to: /Users/ramtinabolfazli/Documents/Work/Seniors and Juniors/Program/server/output

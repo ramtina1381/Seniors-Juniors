@@ -40,12 +40,13 @@ const fileUpload = require('express-fileupload');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const router = express.Router();
 
 const app = express();
-
+console.log("this code is running in app.js.");
 // Vercel-specific configuration
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
+  origin: 'http://localhost:5002',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
@@ -59,6 +60,7 @@ app.use(fileUpload({
   useTempFiles: true,
   tempFileDir: '/tmp'
 }));
+
 
 app.use(express.json());
 
@@ -87,7 +89,10 @@ const ensureLocationDirs = (location) => {
     }
   });
 };
-
+app.use('/api/upload', require('./routes/upload'));
+app.use('/api/process', require('./routes/process'));
+app.use('/api/jhaprocess', require('./routes/jhaprocess'));
+app.use('/api/upload/jha', require('./routes/jhaupload'));
 // Health check
 app.get('/', (req, res) => {
   res.status(200).json({ 
@@ -97,7 +102,6 @@ app.get('/', (req, res) => {
     outputDir: getOutputDir()
   });
 });
-
 // Health check endpoint
 app.get('/health', (req, res) => {
   res.status(200).json({
@@ -106,94 +110,6 @@ app.get('/health', (req, res) => {
     environment: process.env.NODE_ENV,
     uploadsDir: getUploadsDir(),
     outputDir: getOutputDir()
-  });
-});
-
-// Photo upload endpoint
-app.post('/upload/photos/:location', (req, res) => {
-  const { location } = req.params;
-
-  if (!location) {
-    return res.status(400).send('Location number is required in URL');
-  }
-
-  if (!req.files) return res.status(400).send('No files uploaded');
-
-  const photos = Array.isArray(req.files.photos) ? req.files.photos : [req.files.photos];
-
-  // Create location-specific directory
-  ensureLocationDirs(location);
-  const locationDir = getPhotosDir(location);
-
-  const uploaded = [];
-  const skipped = [];
-
-  const uploadPromises = photos.map(photo => {
-    return new Promise((resolve, reject) => {
-      const targetPath = path.join(locationDir, photo.name);
-
-      // Skip if file already exists
-      if (fs.existsSync(targetPath)) {
-        console.log(`Skipping existing photo: ${photo.name}`);
-        skipped.push(photo.name);
-        return resolve(null);
-      }
-
-      // Save photo
-      photo.mv(targetPath, err => {
-        if (err) return reject(err);
-        uploaded.push(photo.name);
-        resolve(photo.name);
-      });
-    });
-  });
-
-  Promise.all(uploadPromises)
-    .then(() => {
-      res.json({
-        success: true,
-        message: 'Photo upload complete',
-        uploaded,
-        skipped,
-        location
-      });
-    })
-    .catch(err => res.status(500).send(err.message));
-});
-
-// Manufacturer upload endpoint
-app.post('/upload/manufacturer/:location', (req, res) => {
-  const { location } = req.params;
-
-  if (!location) {
-    return res.status(400).send('Location number is required in URL');
-  }
-
-  if (!req.files || !req.files.file) {
-    return res.status(400).send('No file uploaded');
-  }
-
-  const file = req.files.file;
-  const ext = path.extname(file.name);
-  if (!['.xlsx', '.xls'].includes(ext.toLowerCase())) {
-    return res.status(400).send('Only Excel files are allowed');
-  }
-
-  // Create location-specific manufacturer directory
-  ensureLocationDirs(location);
-  const manufacturerDir = getManufacturerDir(location);
-
-  // Save with location-specific filename
-  const filename = `manufacturer_file_${location}${ext}`;
-  const uploadPath = path.join(manufacturerDir, filename);
-
-  file.mv(uploadPath, err => {
-    if (err) return res.status(500).send(err.message);
-    res.json({ 
-      success: true, 
-      filename,
-      location 
-    });
   });
 });
 

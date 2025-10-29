@@ -2,13 +2,13 @@
 const API_CONFIG = {
   // Development (local)
   development: {
-    baseURL: 'https://seniors-juniors-client-7yfg1hm21-ramtins-projects-7f18fc1c.vercel.app',
+    baseURL: 'http://localhost:5003',
     apiPrefix: '/api'
   },
   
   // Production (Vercel)
   production: {
-    baseURL: 'https://seniors-juniors-server.vercel.app', // Replace with your actual backend URL
+    baseURL: 'https://seniors-juniors-server.vercel.app',
     apiPrefix: '/api'
   }
 };

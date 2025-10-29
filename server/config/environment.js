@@ -53,7 +53,7 @@ class EnvironmentConfig {
 
     setupDevelopment() {
         this.config = {
-            port: parseInt(this.getEnvVar('PORT', '5002')),
+            port: parseInt(this.getEnvVar('PORT', '5003')),
             cors: {
                 origin: this.getEnvVar('CORS_ORIGIN', '*'), // Allow all origins in development
                 methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
@@ -87,7 +87,7 @@ class EnvironmentConfig {
 
     setupStaging() {
         this.config = {
-            port: parseInt(this.getEnvVar('PORT', '5002')),
+            port: parseInt(this.getEnvVar('PORT', '5003')),
             cors: {
                 origin: this.getEnvVar('CORS_ORIGIN', '*'),
                 methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],

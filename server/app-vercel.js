@@ -6,7 +6,7 @@ const pathConfig = require('./vercel-env'); // Use Vercel-specific config
 const envConfig = require('./config/environment');
 
 const app = express();
-
+console.log("this code is running.");
 // Vercel-specific configuration
 app.use(cors({
   origin: process.env.CORS_ORIGIN || 'https://seniors-juniors-client.vercel.app',
@@ -40,6 +40,19 @@ app.get('/', (req, res) => {
     outputDir: pathConfig.getOutputDir()
   });
 });
+app.get('/api/upload/photos/:location', (req, res) => {
+  res.status(200).json({
+    status: 'photos',
+    location: req.params.location
+  });
+});
+app.get('/api/upload/manufacturer/:location', (req, res) => {
+  res.status(200).json({
+    status: 'manufacturer',
+    location: req.params.location
+  });
+});
+
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
