@@ -10,8 +10,17 @@ const path = require('path');
 const app = express();
 
 // Vercel-specific configuration
+const allowedOrigin = process.env.CORS_ORIGIN || 'https://seniors-juniors-client.vercel.app';
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || '*',
+  origin: allowedOrigin,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
+}));
+// Explicitly handle preflight
+app.options('*', cors({
+  origin: allowedOrigin,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true
